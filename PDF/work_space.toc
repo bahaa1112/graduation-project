@@ -1,0 +1,75 @@
+\xpg@aux {numerals=maghrib}{arabic}
+\contentsline {chapter}{\numberline {1}المقدمة}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}التمهيد والخلفية العلمية}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}دوافع المشروع وأهميته}{1}{section.1.2}%
+\contentsline {section}{\numberline {1.3}أهداف المشروع}{1}{section.1.3}%
+\contentsline {section}{\numberline {1.4}هيكلية الأطروحة}{2}{section.1.4}%
+\contentsline {chapter}{\numberline {2}النمذجة الحركية للذراع الروبوتية}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}مقدمة}{3}{section.2.1}%
+\contentsline {section}{\numberline {2.2}توصيف الذراع الروبوتية}{3}{section.2.2}%
+\contentsline {section}{\numberline {2.3}تمثيل الذراع باستخدام معاملات دينافيت-هارتنبرغ}{4}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}تحديد الإطارات المرجعية}{5}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2} جدول معاملات دينافيت–هارتنبرغ }{6}{subsection.2.3.2}%
+\contentsline {section}{\numberline {2.4}الحركيات الأمامية}{7}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}مصفوفات التحويل}{8}{subsection.2.4.1}%
+\contentsline {section}{\numberline {2.5}الحركيات العكسية}{9}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}منهجية حل مسألة الحركيات العكسية}{9}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2}التمثيل الهندسي للذراع الروبوتية}{10}{subsection.2.5.2}%
+\contentsline {subsection}{\numberline {2.5.3}التحليل الهندسي لاشتقاق معادلات الحركة العكسية}{11}{subsection.2.5.3}%
+\contentsline {subsubsection}{تحديد نقطة مركز المعصم}{11}{subsection.2.5.3}%
+\contentsline {subsubsection}{اشتقاق الزوايا $\theta _1$ و$\theta _2$ و$\theta _3$}{12}{subsection.2.5.3}%
+\contentsline {paragraph}{أولًا: حساب الزاوية $\theta _1$}{12}{subsection.2.5.3}%
+\contentsline {paragraph}{ثانيًا: حساب المتغيرين $r$ و $s$}{12}{subsection.2.5.3}%
+\contentsline {paragraph}{ثالثًا: حساب الزاويتين $\theta _2$ و$\theta _3$}{13}{subsection.2.5.3}%
+\contentsline {paragraph}{حساب الزاويتين $\theta _4$ و$\theta _5$}{16}{figure.caption.8}%
+\contentsline {section}{\numberline {2.6}خلاصة الفصل}{19}{section.2.6}%
+\contentsline {chapter}{\numberline {3}النمذجة الديناميكية للذراع الروبوتية}{22}{chapter.3}%
+\contentsline {section}{\numberline {3.1}مقدمة}{22}{section.3.1}%
+\contentsline {section}{\numberline {3.2}النموذج الديناميكي العام وفق صياغة لاغرانج}{22}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}مصفوفة العطالة}{23}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}مصفوفة قوى كوريوليس والقوى الطاردة المركزية}{23}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}مصفوفة الجاذبية}{24}{subsection.3.2.3}%
+\contentsline {section}{\numberline {3.3}الشكل المصفوفي العام للنموذج الديناميكي للذراع }{24}{section.3.3}%
+\contentsline {section}{\numberline {3.4}اشتقاق مكونات النموذج الديناميكي للذراع الروبوتية}{28}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}حساب مصفوفة العطالة $D_{ij}$}{29}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}حساب متجه الجاذبية $D_g(q)$}{33}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}إضافة عزم القصور الذاتي للمشغلات}{35}{subsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.4.4}إهمال قوى كوريوليس والقوى النابذة المركزية}{36}{subsection.3.4.4}%
+\contentsline {section}{\numberline {3.5}معادلات العزوم النهائية للمفاصل}{38}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}تحليل عزوم التثبيت الساكنة عند الوضع الصفري}{39}{subsection.3.5.1}%
+\contentsline {section}{\numberline {3.6}نمذجة الذراع الروبوتية باستخدام \pLRE {Simscape Multibody}}{41}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}الغاية من نموذج \pLRE {Simscape}}{41}{subsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.6.2}تصدير نموذج \pLRE {SolidWorks}}{42}{subsection.3.6.2}%
+\contentsline {subsection}{\numberline {3.6.3}بناء نموذج المحاكاة في \pLRE {Simscape}}{43}{subsection.3.6.3}%
+\contentsline {subsection}{\numberline {3.6.4}استخدام النموذج في بيئة \pLRE {Simulink}}{45}{subsection.3.6.4}%
+\contentsline {subsection}{\numberline {3.6.5}حدود دقة نموذج المحاكاة في \pLRE {Simscape}}{46}{subsection.3.6.5}%
+\contentsline {section}{\numberline {3.7}خلاصة الفصل}{46}{section.3.7}%
+\contentsline {chapter}{\numberline {4}تصميم انظمة التحكم للذراع الروبوتية}{50}{chapter.4}%
+\contentsline {section}{\numberline {4.1}مقدمة}{50}{section.4.1}%
+\contentsline {section}{\numberline {4.2}صياغة النموذج الديناميكي لأغراض التحكم}{50}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}النموذج الديناميكي المعتمد}{51}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}عزل تسارع المفاصل}{51}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}نمذجة المشغلات}{52}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.4}دمج نموذج المشغلات مع معادلة الحركة}{52}{subsection.4.2.4}%
+\contentsline {subsection}{\numberline {4.2.5}التمثيل غير الخطي في فضاء الحالة}{53}{subsection.4.2.5}%
+\contentsline {subsection}{\numberline {4.2.6}تمثيل النموذج بمصفوفات الحالة}{55}{subsection.4.2.6}%
+\contentsline {subsection}{\numberline {4.2.7}خرج النظام}{56}{subsection.4.2.7}%
+\contentsline {section}{\numberline {4.3}التحكم منخفض المستوى \pLRE {Low-Level Control}}{58}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}تطبيق متحكم \pLRE {PID} مع تعويض الجاذبية}{58}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}تطبيق التحكم التكيفي المعتمد على العزم المحسوب \pLRE {ACTC}}{63}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}تطبيق التحكم الانزلاقي \pLRE {SMC}}{72}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.3.4}تحليل ومقارنة أداء خوارزميات التحكم}{76}{subsection.4.3.4}%
+\contentsline {section}{\numberline {4.4}التحكم عالي المستوى \pLRE {High-Level Control (HLC)}}{78}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}المخطط العام للتحكم عالي المستوى}{79}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}بناء نموذج التحكم عالي المستوى في بيئة \pLRE {MATLAB/Simulink}}{79}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}نتائج تتبع موضع النهاية المنفذة}{81}{subsection.4.4.3}%
+\contentsline {section}{\numberline {4.5}خلاصة الفصل }{82}{section.4.5}%
+\contentsline {chapter}{\numberline {5}تصميم نظام التفاعل الصوتي للذراع الروبوتية}{84}{chapter.5}%
+\contentsline {section}{\numberline {5.1}مقدمة}{84}{section.5.1}%
+\contentsline {section}{\numberline {5.2}البنية العامة لنظام التحكم الصوتي}{84}{section.5.2}%
+\contentsline {section}{\numberline {5.3}المكونات العتادية لنظام التقاط الصوت}{85}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}وحدة التقاط الصوت}{85}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}وحدة المعالجة المركزية}{85}{subsection.5.3.2}%
+\contentsline {section}{\numberline {5.4}خوارزمية التعرف على الكلام باستخدام مكتبة Vosk}{85}{section.5.4}%
+\contentsline {section}{\numberline {5.5}معالجة الأوامر وربطها بالتحكم عالي المستوى (\textenglish {HLC})}{86}{section.5.5}%
+\contentsline {section}{\numberline {5.6}خلاصة الفصل}{86}{section.5.6}%

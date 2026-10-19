@@ -1,0 +1,1004 @@
+\section{الحركيات العكسية}
+
+تُعد الحركيات العكسية \LR{(Inverse Kinematics)} من أهم المسائل في مجال الروبوتات، حيث تهدف إلى تحديد قيم المتغيرات المفصلية اللازمة لتحقيق موضع واتجاه محددين لنهاية الذراع الروبوتية \LR{(End-Effector)}.
+
+على عكس الحركيات الأمامية \LR{(Forward Kinematics)} التي تعتمد على حساب موضع واتجاه النهاية انطلاقًا من زوايا المفاصل، فإن الحركيات العكسية تعالج المسألة بشكل معكوس، أي تحديد زوايا المفاصل انطلاقًا من الوضعية المطلوبة للنهاية. وبسبب هذا الطابع العكسي، فإن هذه المسألة تكون أكثر تعقيدًا، وقد تمتلك حلولًا متعددة أو قد تكون غير قابلة للحل في بعض الحالات الخاصة.
+
+ولحل هذه المسألة بشكل منهجي، يتم تمثيل وضعية نهاية الذراع الروبوتية باستخدام مصفوفة التحويل الكلية، والتي تحتوي على معلومات الموضع والاتجاه معًا. ومن خلال تحليل هذه المصفوفة، يمكن فصل تأثير الموضع عن تأثير الاتجاه، مما يسمح بتبسيط عملية الاشتقاق.
+
+بناءً على ذلك، سيتم اعتماد منهجية تعتمد على تحديد نقطة مركز المعصم \LR{(Wrist Center)} واستخدام العلاقات الهندسية لاستخراج الزوايا المسؤولة عن الموضع، ثم الرجوع إلى مصفوفة الدوران لاستخراج الزوايا المسؤولة عن الاتجاه. وسيتم في القسم التالي توضيح هذه المنهجية بشكل رياضي مفصل مدعّم بالعلاقات اللازمة لاشتقاق الزوايا المفصلية.
+
+
+\subsection{منهجية حل مسألة الحركيات العكسية}
+
+لحل مسألة الحركيات العكسية للذراع الروبوتية المدروسة، يتم اعتماد منهجية تعتمد على تحليل مصفوفة التحويل الكلية وفصل تأثير كل من الموضع والاتجاه، مما يساهم في تبسيط عملية إيجاد المتغيرات المفصلية.
+
+يتم تمثيل وضعية نهاية الذراع الروبوتية باستخدام مصفوفة التحويل:
+
+\[
+T_5^0 =
+\begin{bmatrix}
+R_5^0 & P \\
+0 & 1
+\end{bmatrix}
+\]
+
+حيث يمثل المتجه \(P\) موضع نهاية الذراع، بينما تمثل \(R_{05}\) مصفوفة الدوران المرتبطة باتجاهها.
+
+تعتمد منهجية الحل على تقسيم المسألة إلى مرحلتين أساسيتين:
+
+\begin{itemize}
+\item المرحلة الأولى: تحليل الموضع \LR{(Position Analysis)}
+\item المرحلة الثانية: تحليل الاتجاه \LR{(Orientation Analysis)}
+\end{itemize}
+
+في المرحلة الأولى، يتم تحديد نقطة تُعرف بمركز المعصم \LR{(Wrist Center)}، والتي تمثل النقطة الفاصلة بين الجزء المسؤول عن تحديد الموضع والجزء المسؤول عن تحديد الاتجاه. ويتم التعبير عن موقع هذه النقطة بشكل عام بالعلاقة:
+
+\[
+P_w = P - d_5 \, a
+\]
+
+حيث يمثل المتجه \(a\) اتجاه المحور النهائي للذراع، والمستخرج من مصفوفة الدوران.
+
+بعد تحديد موقع مركز المعصم، يتم استخدام العلاقات الهندسية للذراع لاستخراج الزوايا المرتبطة بالموضع، وذلك بالاعتماد على إسقاطات هندسية مناسبة.
+
+أما في المرحلة الثانية، فيتم استخدام مصفوفة الدوران لاستخراج الزوايا المرتبطة باتجاه النهاية، وذلك من خلال العلاقة العامة:
+
+\[
+R_5^0 = R_1^0 R_2^1 R_3^2 R_4^3 R_5^4
+\]
+
+ومنها يمكن عزل الجزء الخاص بالوصلات الأخيرة على الشكل:
+
+\[
+R_5^3 = (R_3^0)^T \, R_5^0
+\]
+
+وبمقارنة هذه المصفوفة مع التعبير النظري لها، يمكن استخراج الزوايا المتبقية.
+
+بناءً على ذلك، سيتم في القسم التالي بناء تمثيل هندسي للذراع الروبوتية وتوضيح العلاقات الهندسية التي سيتم استخدامها لاحقًا في اشتقاق المعادلات التفصيلية للحركيات العكسية.
+
+
+
+\subsection{التمثيل الهندسي للذراع الروبوتية}
+
+من أجل اشتقاق معادلات الحركيات العكسية بصورة واضحة ومنهجية، لا بد أولًا من بناء تمثيل هندسي مبسط للذراع الروبوتية يوضح مواقع المفاصل، واتجاهات المحاور، والأطوال الهندسية للوصلات، بالإضافة إلى النقاط والمتغيرات التي سيتم الاعتماد عليها لاحقًا في التحليل.
+
+يساعد هذا التمثيل الهندسي على تحويل المسألة من صيغة جبرية مجردة إلى صيغة بصرية وهندسية أكثر وضوحًا، مما يسهّل تتبع العلاقات بين أجزاء الذراع المختلفة، وفهم كيفية ارتباط موضع النهاية الفعالة بالزوايا المفصلية.
+
+كما يوفّر الرسم أساسًا مرجعيًا ثابتًا يمكن من خلاله تعريف المتغيرات المستخدمة في الاشتقاق، مثل الإزاحات، والإسقاطات، والزوايا، ونقطة مركز المعصم، والتي سيتم توظيفها لاحقًا عند كتابة العلاقات الرياضية الخاصة بالحركيات العكسية.
+
+بناءً على ذلك، سيتم في البداية رسم النموذج الهندسي للذراع الروبوتية، مع توضيح المحاور الأساسية والعناصر الهندسية الضرورية التي سيُبنى عليها الاشتقاق في الخطوات اللاحقة.
+
+وبذلك نحصل على التمثيل الهندسي المعتمد للذراع الروبوتية، والذي يوضح المحاور المرجعية، وأطوال الوصلات، والزوايا المفصلية، والإسقاطات الهندسية اللازمة، كما في الشكل~\ref{fig:geom_arm}.
+
+\begin{figure}[H]
+    \centering
+
+    \tdplotsetmaincoords{80}{30}
+
+    %=========================
+    % Dynamic angle theta1
+    %=========================
+    \def\thetaOne{30} % غيّرها كما تريد
+
+    \begin{tikzpicture}[tdplot_main_coords, scale=4, >=latex, line cap=round, line join=round]
+
+    %=========================
+    % Origin
+    %=========================
+    \coordinate (O) at (0,0,0);
+
+    %=========================
+    % Axes
+    %=========================
+    \draw[->, thick] (O) -- (2,0,0) node[below right] {$X_0$};
+    \draw[->, thick] (O) -- (0,0,1) node[above] {$Z_0$};
+    \draw[->, thick] (O) -- (0,2,0) node[left] {$Y_0$};
+
+    %=========================
+    % Parameters
+    %=========================
+    \def\R{0.06}
+    \def\H{0.32}
+
+    \def\Lone{0.35}
+    \def\Ltwo{0.30}
+
+    \def\Rtwo{0.06}
+    \def\LtwoCyl{0.46}
+
+    \def\Lthree{0.35}
+    \def\LtwoExt{0.20} % امتداد منقط باتجاه l2 من أجل theta3
+
+    \def\Lfour{0.30}
+    \def\Rfour{0.05}
+    \def\LfourCyl{0.32}
+
+    % l4 أطول
+    \def\Lfive{0.34}
+
+    \def\Rfive{0.06}
+    \def\LfiveCyl{0.46}
+
+    % l5 أطول
+    \def\Lsix{0.42}
+
+    % أبعاد النهاية المنفذة
+    \def\EEhalfHeight{0.07}
+    \def\EEarmLength{0.07}
+
+    % unit directions in XZ plane
+    \def\uxthree{0.70710678} % cos45
+    \def\uzthree{0.70710678} % sin45
+
+    \def\uxfour{0.5}         % cos60
+    \def\uzfour{0.8660254}   % sin60
+
+    %=========================
+    % Global coordinates of W for projections
+    %=========================
+    \pgfmathsetmacro{\Wxlocal}{\Lone + (\Lthree + 4*\Rtwo)*\uxthree + (\Lfour + \LfourCyl + \Lfive)*\uxfour + \Rfive}
+    \pgfmathsetmacro{\Wzlocal}{\Ltwo + (\Lthree + 4*\Rtwo)*\uzthree + (\Lfour + \LfourCyl + \Lfive)*\uzfour}
+
+    \pgfmathsetmacro{\Wxglobal}{\Wxlocal*cos(\thetaOne)}
+    \pgfmathsetmacro{\Wyglobal}{\Wxlocal*sin(\thetaOne)}
+    \pgfmathsetmacro{\Wzglobal}{\H + \Wzlocal}
+
+    \coordinate (Wg)   at (\Wxglobal,\Wyglobal,\Wzglobal);
+    \coordinate (Wxy)  at (\Wxglobal,\Wyglobal,0);
+    \coordinate (Wxax) at (\Wxglobal,0,0);
+    \coordinate (Wyax) at (0,\Wyglobal,0);
+
+    % نقطة تقاطع Wz مع r
+    \pgfmathsetmacro{\Bcrossx}{\Lone*cos(\thetaOne)}
+    \pgfmathsetmacro{\Bcrossy}{\Lone*sin(\thetaOne)}
+    \pgfmathsetmacro{\Bcrossz}{\H + \Ltwo}
+    \coordinate (Sr) at (\Bcrossx,\Bcrossy,\Bcrossz);
+
+    % إسقاط طرفي r على المستوى XY
+    \coordinate (Bxy)   at (\Bcrossx,\Bcrossy,0);
+    \coordinate (BWzxy) at (\Wxglobal,\Wyglobal,0);
+
+    % إسقاط a1 على المستوى XY
+    \coordinate (Axy) at ({\Lone*cos(\thetaOne)},{\Lone*sin(\thetaOne)},0);
+
+    %=========================
+    % First cylinder along Z (fixed base)
+    %=========================
+    \begin{scope}[canvas is xy plane at z=0]
+      \draw[thick] (0,0) circle (\R);
+    \end{scope}
+
+    \begin{scope}[canvas is xy plane at z=\H]
+      \draw[thick] (0,0) circle (\R);
+    \end{scope}
+
+    \draw[thick] (\R,0,0) -- (\R,0,\H);
+    \draw[thick] (-\R,0,0) -- (-\R,0,\H);
+
+    %=========================
+    % theta1 label only
+    %=========================
+    \node at (0.1,0.03,0.09) {$\theta_1$};
+
+    %=========================
+    % Top of first cylinder
+    %=========================
+    \coordinate (T) at (0,0,\H);
+
+    %=========================
+    % Rotate everything after joint 1
+    %=========================
+    \tdplotsetrotatedcoords{\thetaOne}{0}{0}
+    \tdplotsetrotatedcoordsorigin{(T)}
+
+    \begin{scope}[tdplot_rotated_coords]
+
+    %-------------------------
+    % a1 parallel to local X
+    %-------------------------
+    \coordinate (A) at (\Lone,0,0);
+    \draw[very thick] (0,0,0) -- (A);
+    \node at ($(0,0,0)!0.5!(A)+(0,0,0.08)$) {$a_1$};
+
+    %-------------------------
+    % l1 parallel to local Z
+    %-------------------------
+    \coordinate (B) at (\Lone,0,\Ltwo);
+    \draw[very thick] (A) -- (B);
+    \node at ($(A)!0.5!(B)+(0.09,0,0)$) {$l_1$};
+
+    %-------------------------
+    % Second cylinder parallel to local Y
+    %-------------------------
+    \pgfmathsetmacro{\CylTwoCx}{\Lone + \Rtwo*\uxthree}
+    \pgfmathsetmacro{\CylTwoCz}{\Ltwo + \Rtwo*\uzthree}
+
+    \coordinate (CylTwoLowerMid) at (\Lone,0,\Ltwo);
+    \coordinate (C) at ({\Lone + 2*\Rtwo*\uxthree},0,{\Ltwo + 2*\Rtwo*\uzthree});
+
+    \begin{scope}[canvas is xz plane at y=-\LtwoCyl/2]
+      \draw[thick] (\CylTwoCx,\CylTwoCz) circle (\Rtwo);
+    \end{scope}
+
+    \begin{scope}[canvas is xz plane at y=\LtwoCyl/2]
+      \draw[thick] (\CylTwoCx,\CylTwoCz) circle (\Rtwo);
+    \end{scope}
+
+    \draw[thick]
+    (\Lone,-\LtwoCyl/2,\Ltwo)
+    --
+    (\Lone,\LtwoCyl/2,\Ltwo);
+
+    \draw[thick]
+    ({\Lone + 2*\Rtwo*\uxthree},-\LtwoCyl/2,{\Ltwo + 2*\Rtwo*\uzthree})
+    --
+    ({\Lone + 2*\Rtwo*\uxthree},\LtwoCyl/2,{\Ltwo + 2*\Rtwo*\uzthree});
+
+    %-------------------------
+    % theta2 label only
+    %-------------------------
+    \node at ({\CylTwoCx+0.28},0.02,{\CylTwoCz+0.11}) {$\theta_2$};
+
+    %-------------------------
+    % l2 in local XZ plane at 45 deg
+    %-------------------------
+    \coordinate (D) at ({\Lone + (\Lthree + 2*\Rtwo)*\uxthree},0,{\Ltwo + (\Lthree + 2*\Rtwo)*\uzthree});
+
+    \draw[very thick] (C) -- (D);
+    \node at ($(C)!0.5!(D)+(-0.02,0,0.12)$) {$l_2$};
+
+    %-------------------------
+    % Third cylinder parallel to local Y
+    %-------------------------
+    \coordinate (E) at ({\Lone + (\Lthree + 4*\Rtwo)*\uxthree},0,{\Ltwo + (\Lthree + 4*\Rtwo)*\uzthree});
+
+    % امتداد منقط يبدأ من نفس نقطة بداية l3
+    \coordinate (Eext) at ({\Lone + (\Lthree + 4*\Rtwo + \LtwoExt)*\uxthree},0,
+                           {\Ltwo + (\Lthree + 4*\Rtwo + \LtwoExt)*\uzthree});
+    \draw[densely dashed] (E) -- (Eext);
+
+    \begin{scope}[canvas is xz plane at y=-\LtwoCyl/2]
+      \draw[thick]
+      ({\Lone + (\Lthree + 3*\Rtwo)*\uxthree},
+       {\Ltwo + (\Lthree + 3*\Rtwo)*\uzthree}) circle (\Rtwo);
+    \end{scope}
+
+    \begin{scope}[canvas is xz plane at y=\LtwoCyl/2]
+      \draw[thick]
+      ({\Lone + (\Lthree + 3*\Rtwo)*\uxthree},
+       {\Ltwo + (\Lthree + 3*\Rtwo)*\uzthree}) circle (\Rtwo);
+    \end{scope}
+
+    \draw[thick]
+    ({\Lone + (\Lthree + 2*\Rtwo)*\uxthree},-\LtwoCyl/2,{\Ltwo + (\Lthree + 2*\Rtwo)*\uzthree})
+    --
+    ({\Lone + (\Lthree + 2*\Rtwo)*\uxthree},\LtwoCyl/2,{\Ltwo + (\Lthree + 2*\Rtwo)*\uzthree});
+
+    \draw[thick]
+    ({\Lone + (\Lthree + 4*\Rtwo)*\uxthree},-\LtwoCyl/2,{\Ltwo + (\Lthree + 4*\Rtwo)*\uzthree})
+    --
+    ({\Lone + (\Lthree + 4*\Rtwo)*\uxthree},\LtwoCyl/2,{\Ltwo + (\Lthree + 4*\Rtwo)*\uzthree});
+
+    %-------------------------
+    % theta3 label only
+    %-------------------------
+    \node at ({\Lone + (\Lthree + 3*\Rtwo)*\uxthree + 0.18},0.02,
+             {\Ltwo + (\Lthree + 3*\Rtwo)*\uzthree + 0.18})
+    {$\scriptstyle \theta_3$};
+
+    %-------------------------
+    % l3
+    %-------------------------
+    \coordinate (F) at ({\Lone + (\Lthree + 4*\Rtwo)*\uxthree + \Lfour*\uxfour},0,
+    {\Ltwo + (\Lthree + 4*\Rtwo)*\uzthree + \Lfour*\uzfour});
+
+    \draw[very thick] (E) -- (F);
+    \node at ($(E)!0.5!(F)+(-0.1,0,0.05)$) {$l_3$};
+
+    %-------------------------
+    % Cylinder parallel to l3 direction
+    %-------------------------
+    \coordinate (G) at ({\Lone + (\Lthree + 4*\Rtwo)*\uxthree + \Lfour*\uxfour + \LfourCyl*\uxfour},0,
+    {\Ltwo + (\Lthree + 4*\Rtwo)*\uzthree + \Lfour*\uzfour + \LfourCyl*\uzfour});
+
+    \coordinate (Fp) at ($(F)+({-\Rfour*\uzfour},0,{\Rfour*\uxfour})$);
+    \coordinate (Fm) at ($(F)-({-\Rfour*\uzfour},0,{\Rfour*\uxfour})$);
+
+    \coordinate (Gp) at ($(G)+({-\Rfour*\uzfour},0,{\Rfour*\uxfour})$);
+    \coordinate (Gm) at ($(G)-({-\Rfour*\uzfour},0,{\Rfour*\uxfour})$);
+
+    \draw[thick] (Fp) -- (Fm);
+    \draw[thick] (Gp) -- (Gm);
+    \draw[thick] (Fp) -- (Gp);
+    \draw[thick] (Fm) -- (Gm);
+
+    %-------------------------
+    % l4 parallel to previous
+    %-------------------------
+    \coordinate (HfiveStart) at (G);
+    \coordinate (HfiveEnd) at ({\Lone + (\Lthree + 4*\Rtwo)*\uxthree + \Lfour*\uxfour + \LfourCyl*\uxfour + \Lfive*\uxfour},0,
+    {\Ltwo + (\Lthree + 4*\Rtwo)*\uzthree + \Lfour*\uzfour + \LfourCyl*\uzfour + \Lfive*\uzfour});
+
+    \draw[very thick] (HfiveStart) -- (HfiveEnd);
+    \node at ($(HfiveStart)!0.5!(HfiveEnd)+(-0.11,0,0.06)$) {$l_4$};
+
+    %-------------------------
+    % Final cylinder similar to cylinder 2
+    %-------------------------
+    \coordinate (CfiveCenter) at ({\Lone + (\Lthree + 4*\Rtwo)*\uxthree + \Lfour*\uxfour + \LfourCyl*\uxfour + \Lfive*\uxfour + \Rfive},0,
+    {\Ltwo + (\Lthree + 4*\Rtwo)*\uzthree + \Lfour*\uzfour + \LfourCyl*\uzfour + \Lfive*\uzfour});
+
+    \begin{scope}[canvas is xz plane at y=-\LfiveCyl/2]
+      \draw[thick]
+      ({\Lone + (\Lthree + 4*\Rtwo)*\uxthree + \Lfour*\uxfour + \LfourCyl*\uxfour + \Lfive*\uxfour + \Rfive},
+       {\Ltwo + (\Lthree + 4*\Rtwo)*\uzthree + \Lfour*\uzfour + \LfourCyl*\uzfour + \Lfive*\uzfour})
+      circle (\Rfive);
+    \end{scope}
+
+    \begin{scope}[canvas is xz plane at y=\LfiveCyl/2]
+      \draw[thick]
+      ({\Lone + (\Lthree + 4*\Rtwo)*\uxthree + \Lfour*\uxfour + \LfourCyl*\uxfour + \Lfive*\uxfour + \Rfive},
+       {\Ltwo + (\Lthree + 4*\Rtwo)*\uzthree + \Lfour*\uzfour + \LfourCyl*\uzfour + \Lfive*\uzfour})
+      circle (\Rfive);
+    \end{scope}
+
+    \draw[thick]
+    ({\Lone + (\Lthree + 4*\Rtwo)*\uxthree + \Lfour*\uxfour + \LfourCyl*\uxfour + \Lfive*\uxfour},-\LfiveCyl/2,
+     {\Ltwo + (\Lthree + 4*\Rtwo)*\uzthree + \Lfour*\uzfour + \LfourCyl*\uzfour + \Lfive*\uzfour})
+    --
+    ({\Lone + (\Lthree + 4*\Rtwo)*\uxthree + \Lfour*\uxfour + \LfourCyl*\uxfour + \Lfive*\uxfour},\LfiveCyl/2,
+     {\Ltwo + (\Lthree + 4*\Rtwo)*\uzthree + \Lfour*\uzfour + \LfourCyl*\uzfour + \Lfive*\uzfour});
+
+    \draw[thick]
+    ({\Lone + (\Lthree + 4*\Rtwo)*\uxthree + \Lfour*\uxfour + \LfourCyl*\uxfour + \Lfive*\uxfour + 2*\Rfive},-\LfiveCyl/2,
+     {\Ltwo + (\Lthree + 4*\Rtwo)*\uzthree + \Lfour*\uzfour + \LfourCyl*\uzfour + \Lfive*\uzfour})
+    --
+    ({\Lone + (\Lthree + 4*\Rtwo)*\uxthree + \Lfour*\uxfour + \LfourCyl*\uxfour + \Lfive*\uxfour + 2*\Rfive},\LfiveCyl/2,
+     {\Ltwo + (\Lthree + 4*\Rtwo)*\uzthree + \Lfour*\uzfour + \LfourCyl*\uzfour + \Lfive*\uzfour});
+
+    %-------------------------
+    % Point W
+    %-------------------------
+    \fill (CfiveCenter) circle (0.55pt);
+    \node at ($(CfiveCenter)+(0.05,0,0.22)$) {$W$};
+
+    %-------------------------
+    % l5 parallel to local X
+    %-------------------------
+    \coordinate (LsixEnd) at ($(CfiveCenter)+(\Lsix,0,0)$);
+
+    \draw[very thick] (CfiveCenter) -- (LsixEnd);
+    \node at ($(CfiveCenter)!0.5!(LsixEnd)+(0.03,0,0.11)$) {$l_5$};
+
+    %-------------------------
+    % End-effector:
+    % vertical line + top and bottom horizontal lines
+    %-------------------------
+    \coordinate (EEtop) at ($(LsixEnd)+(0,0,\EEhalfHeight)$);
+    \coordinate (EEbot) at ($(LsixEnd)+(0,0,-\EEhalfHeight)$);
+
+    \draw[thick] (EEbot) -- (EEtop);
+    \draw[thick] (EEtop) -- ($(EEtop)+(\EEarmLength,0,0)$);
+    \draw[thick] (EEbot) -- ($(EEbot)+(\EEarmLength,0,0)$);
+
+    %-------------------------
+    % Dashed line parallel to a1
+    %-------------------------
+    \coordinate (BWz) at (\Wxlocal,0,\Ltwo);
+    \draw[densely dashed] (B) -- (BWz);
+    \node at ($(B)!0.5!(BWz)+(0,0,0.055)$) {$r$};
+
+    \end{scope}
+
+    %=========================
+    % Projections of W
+    %=========================
+    \draw[densely dashed] (Wg) -- (Wxy);
+    \draw[densely dashed] (Wxy) -- (Wxax);
+    \draw[densely dashed] (Wxy) -- (Wyax);
+
+    \fill (Wxy)  circle (0.45pt);
+    \fill (Wxax) circle (0.45pt);
+    \fill (Wyax) circle (0.45pt);
+
+    %=========================
+    % Projection of r onto XY plane
+    %=========================
+    \draw[densely dashed, blue] (Bxy) -- (BWzxy);
+    \node[blue] at ($(Bxy)!0.5!(BWzxy)+(0,-0.19,0)$) {$\scriptstyle r_{xy}$};
+
+    %=========================
+    % Projection of a1 onto XY plane
+    %=========================
+    \draw[dash dot dot, red] (O) -- (Axy);
+    \node[red] at ($(O)!0.5!(Axy)+(0.03,0.09,0)$) {$\scriptstyle a_{xy}$};
+
+    %=========================
+    % Labels for projection lines
+    %=========================
+    \node at ($(Wg)!0.63!(Wxy)+(0.11,0,0)$) {$W_z$};
+    \node at ($(Wg)!0.32!(Sr)+(0.32,0,0)$) {$s$};
+    \node at ($(Wxy)!0.5!(Wxax)+(0.09,-0.11,0)$) {$\scriptstyle W_y$};
+    \node at ($(Wxy)!0.5!(Wyax)+(-0.12,0.19,0)$) {$\scriptstyle W_x$};
+
+    %=========================
+    % Origin point
+    %=========================
+    \fill (O) circle (0.4pt);
+
+    \end{tikzpicture}
+
+    \caption{التمثيل الهندسي المعتمد للذراع الروبوتية المستخدم في اشتقاق معادلات الحركيات العكسية.}
+    \label{fig:geom_arm}
+\end{figure}
+
+
+
+\subsection{التحليل الهندسي لاشتقاق معادلات الحركة العكسية}
+في هذا القسم سيتم اشتقاق معادلات الحركيات العكسية من خلال التحليل الهندسي للنموذج المبين سابقًا، حيث يتم أولًا استخراج الزوايا الأساسية $\theta_1$ و$\theta_2$ و$\theta_3$ بالاعتماد على موضع النقطة النهائية. بعد ذلك، يتم استخدام هذه القيم لحساب الزوايا $\theta_4$ و$\theta_5$ المرتبطة بتوجيه النهاية الفعالة.
+
+
+
+
+\subsubsection{تحديد نقطة مركز المعصم}
+
+تُعرّف نقطة مركز المعصم \LR{(Wrist Center)} بأنها النقطة التي تفصل بين جزء تحديد الموضع \LR{(Position)} وجزء تحديد التوجيه \LR{(Orientation)} في الذراع الروبوتية، وتُستخدم كمرجع أساسي في اشتقاق معادلات الحركيات العكسية.
+
+لنفرض أن موضع النهاية المنفذة يُعطى بالشعاع:
+\[
+\mathbf{p} = [p_x \; p_y \; p_z]^T
+\]
+حيث تمثل $\mathbf{p}$ موقع النهاية المنفذة \LR{(Position of the End-Effector)}.
+
+كما نعرّف شعاع نقطة المعصم بالشكل:
+\[
+\mathbf{w} = [w_x \; w_y \; w_z]^T
+\]
+حيث تمثل $\mathbf{w}$ موقع مركز المعصم \LR{(Wrist Center)}.
+
+يتم حساب نقطة المعصم من خلال إزاحة النهاية المنفذة بمقدار طول الوصلة الأخيرة $l_5$ باتجاه محور الأداة، وذلك وفق العلاقة:
+\[
+\mathbf{w} = \mathbf{p} - l_5 \, \hat{X}_{05}
+\]
+
+وباستخدام مصفوفة الدوران للإطار النهائي، يمكن التعبير عن متجه الوحدة $\hat{X}_{05}$ بدلالة عناصر المصفوفة، بحيث:
+\[
+\hat{X}_{05} =
+\begin{bmatrix}
+r_{11} \\
+r_{21} \\
+r_{31}
+\end{bmatrix}
+\]
+
+وعليه يمكن كتابة إحداثيات نقطة المعصم بشكل صريح كما يلي:
+\[
+\mathbf{w} =
+\begin{bmatrix}
+p_x - l_5 r_{11} \\
+p_y - l_5 r_{21} \\
+p_z - l_5 r_{31}
+\end{bmatrix}
+\]
+
+تُستخدم هذه العلاقة لاحقًا لاستخراج موضع نقطة المعصم بدلالة موضع النهاية المنفذة ومصفوفة التوجيه، مما يتيح الانتقال إلى اشتقاق الزوايا $\theta_1$ و$\theta_2$ و$\theta_3$.
+
+
+
+
+\subsubsection{اشتقاق الزوايا $\theta_1$ و$\theta_2$ و$\theta_3$}
+
+بعد تحديد موضع نقطة المعصم $\mathbf{w}$، يمكن استنتاج الزوايا الأساسية للذراع الروبوتية بالاعتماد على الإسقاطات الهندسية.
+
+\paragraph{أولًا: حساب الزاوية $\theta_1$}
+
+تمثل الزاوية $\theta_1$ دوران القاعدة حول المحور $Z_0$، ويتم حسابها من إسقاط نقطة المعصم على المستوى $XY$ كما يلي:
+\[
+\theta_1 = \mathrm{atan2}(w_y, w_x)
+\]
+
+\paragraph{ثانيًا: حساب المتغيرين $r$ و $s$}
+
+من أجل اشتقاق الزاويتين $\theta_2$ و$\theta_3$، يتم أولًا تحديد الإحداثيات الفعالة في المستوى العمودي من خلال تعريف:
+\[
+r = \sqrt{w_x^2 + w_y^2} - a_1
+\]
+\[
+s = w_z - l_1
+\]
+
+حيث تمثل $a_1$ الإزاحة الأفقية الأولى، و$l_1$ الإزاحة العمودية للوصلة الأولى.
+
+\paragraph{ثالثًا: حساب الزاويتين $\theta_2$ و$\theta_3$}
+
+بعد تحديد $r$ و$s$، تتحول المسألة إلى مسألة هندسية مستوية، كما هو موضح في الشكل~\ref{fig:rs_plane}، حيث يمكن تمثيل الذراع في المستوى $(r,s)$ على شكل سلسلة وصلات مترابطة.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[scale=3.2, >=latex, line cap=round, line join=round]
+
+    %=========================
+    % Parameters
+    %=========================
+    \def\Rj{0.07}
+    \def\Ltwo{0.75}
+    \def\Lthree{0.72}
+    \def\Lcyl{0.16}
+    \def\Lfour{0.42}
+    \def\Lext{0.28}
+
+    \def\thetaTwo{35}
+    \def\thetaThree{42}
+
+    %=========================
+    % Joint 1 center
+    %=========================
+    \coordinate (J1) at (0,0);
+
+    %=========================
+    % Axes (من محيط الدائرة)
+    %=========================
+    \draw[->, thick] (\Rj,0) -- (2.0,0) node[right] {$r$};
+    \draw[->, thick] (0,\Rj) -- (0,2.0) node[above] {$s$};
+
+    % الدائرة الأولى
+    \draw[very thick, fill=white] (J1) circle (\Rj);
+
+    %=========================
+    % l2
+    %=========================
+    \coordinate (P2start) at ($(J1)+({\Rj*cos(\thetaTwo)},{\Rj*sin(\thetaTwo)})$);
+    \coordinate (J2) at ($(P2start)+({(\Ltwo+2*\Rj)*cos(\thetaTwo)},{(\Ltwo+2*\Rj)*sin(\thetaTwo)})$);
+    \coordinate (P2end) at ($(J2)-({\Rj*cos(\thetaTwo)},{\Rj*sin(\thetaTwo)})$);
+
+    \draw[very thick] (P2start) -- (P2end);
+    \node at ($(P2start)!0.5!(P2end)+(-0.02,0.08)$) {$l_2$};
+
+    \draw[very thick, fill=white] (J2) circle (\Rj);
+
+    %=========================
+    % l3
+    %=========================
+    \pgfmathsetmacro{\phiThree}{\thetaTwo+\thetaThree}
+
+    \coordinate (P3start) at ($(J2)+({\Rj*cos(\phiThree)},{\Rj*sin(\phiThree)})$);
+    \coordinate (P3end) at ($(P3start)+({\Lthree*cos(\phiThree)},{\Lthree*sin(\phiThree)})$);
+
+    \draw[very thick] (P3start) -- (P3end);
+    \node at ($(P3start)!0.5!(P3end)+(-0.10,0.03)$) {$l_3$};
+
+    %=========================
+    % امتداد l2 المنقط
+    %=========================
+    \coordinate (Pext) at ($(P3start)+({\Lext*cos(\thetaTwo)},{\Lext*sin(\thetaTwo)})$);
+    \draw[densely dashed, thick] (P3start) -- (Pext);
+
+    %=========================
+    % Cylinder
+    %=========================
+    \coordinate (CylStart) at (P3end);
+    \coordinate (CylEnd) at ($(CylStart)+({\Lcyl*cos(\phiThree)},{\Lcyl*sin(\phiThree)})$);
+
+    \coordinate (CsP) at ($(CylStart)+({-0.035*sin(\phiThree)},{0.035*cos(\phiThree)})$);
+    \coordinate (CsM) at ($(CylStart)-({-0.035*sin(\phiThree)},{0.035*cos(\phiThree)})$);
+
+    \coordinate (CeP) at ($(CylEnd)+({-0.035*sin(\phiThree)},{0.035*cos(\phiThree)})$);
+    \coordinate (CeM) at ($(CylEnd)-({-0.035*sin(\phiThree)},{0.035*cos(\phiThree)})$);
+
+    \draw[thick] (CsP) -- (CsM);
+    \draw[thick] (CeP) -- (CeM);
+    \draw[thick] (CsP) -- (CeP);
+    \draw[thick] (CsM) -- (CeM);
+
+    %=========================
+    % l4
+    %=========================
+    \coordinate (P4start) at (CylEnd);
+    \coordinate (W) at ($(P4start)+({\Lfour*cos(\phiThree)},{\Lfour*sin(\phiThree)})$);
+
+    \draw[very thick] (P4start) -- (W);
+    \node at ($(P4start)!0.5!(W)+(-0.06,0.06)$) {$l_4$};
+
+    %=========================
+    % Point W
+    %=========================
+    \fill (W) circle (0.04);
+    \node at ($(W)+(0.03,0.08)$) {$W$};
+
+    %=========================
+    % إسقاط W
+    %=========================
+    \coordinate (Wx) at ($(W |- 0,0)$); % إسقاط W على محور r
+    \coordinate (Wy) at ($(0,0 |- W)$); % إسقاط W على محور s
+
+    \draw[densely dashed] (W) -- (Wx);
+    \draw[densely dashed] (W) -- (Wy);
+
+    \fill (Wx) circle (0.02);
+    \fill (Wy) circle (0.02);
+
+    %=========================
+    % theta2
+    %=========================
+    \draw[thick] (0.28,0) arc[start angle=0,end angle=\thetaTwo,radius=0.28];
+    \node at ({0.42*cos(\thetaTwo/2)},{0.42*sin(\thetaTwo/2)-0.02}) {$\theta_2$};
+
+    %=========================
+    % theta3
+    %=========================
+    \draw[thick]
+      ($(P3start)+({0.16*cos(\thetaTwo)},{0.16*sin(\thetaTwo)})$)
+      arc[start angle=\thetaTwo,end angle=\phiThree,radius=0.16];
+
+    \node at ($(P3start)+({0.24*cos(\thetaTwo+\thetaThree/2)},{0.24*sin(\thetaTwo+\thetaThree/2)})$) {$\theta_3$};
+
+    \end{tikzpicture}
+    \caption{\centering التمثيل الهندسي في المستوى $(r,s)$ مع إسقاط النقطة $W$.}
+    
+    \label{fig:rs_plane}
+\end{figure}
+وباستخدام معادلات الإسقاط نحصل على:
+
+\[
+L = \sqrt{l_3^2 + l_4^2}
+\]
+\[
+\alpha = \tan^{-1}\left(\frac{l_4}{l_3}\right)
+\]
+
+حيث أنه كما هو موضح في الشكل~\ref{fig:frames}، فإن الوصلتين $l_3$ و $l_4$ لا تقعان على استقامة واحدة، بل بينهما زاوية ثابتة مقدارها $90^\circ$، لذلك يتم تمثيلهما بطول مكافئ $L$ وزاوية انحراف $\alpha$.
+
+\[
+r = l_2 \cos(\theta_2) + L \cos(\theta_2 + \theta_3 + \alpha)
+\]
+\[
+s = l_2 \sin(\theta_2) + L \sin(\theta_2 + \theta_3 + \alpha)
+\]
+
+بتربيع المعادلتين وجمعهما:
+\[
+r^2 + s^2 =
+\left(l_2 \cos\theta_2 + L \cos(\theta_2+\theta_3+\alpha)\right)^2 +
+\left(l_2 \sin\theta_2 + L \sin(\theta_2+\theta_3+\alpha)\right)^2
+\]
+
+وباستخدام الهوية:
+\[
+\cos^2(x) + \sin^2(x) = 1
+\]
+
+نحصل على:
+\[
+r^2 + s^2 = l_2^2 + L^2 + 2\,l_2 L \cos(\theta_3 + \alpha)
+\]
+
+ولتبسيط الكتابة نعرّف:
+\[
+\gamma = \theta_3 + \alpha
+\]
+
+ومنها:
+\[
+\cos\gamma =
+\frac{r^2 + s^2 - l_2^2 - L^2}{2\,l_2\,L}
+\]
+
+كما أن:
+\[
+\sin\gamma = \sqrt{1 - \cos^2\gamma}
+\]
+
+وبالتالي:
+\[
+\theta_3 =
+\mathrm{atan2}\left(\sin\gamma,\cos\gamma\right) - \alpha
+\]
+
+ثم من المعادلتين:
+\[
+r = l_2 \cos(\theta_2) + L \cos(\theta_2+\gamma)
+\]
+\[
+s = l_2 \sin(\theta_2) + L \sin(\theta_2+\gamma)
+\]
+
+وباستخدام متطابقات جمع الزوايا:
+\[
+\cos(\theta_2+\gamma)=\cos\theta_2\cos\gamma-\sin\theta_2\sin\gamma
+\]
+\[
+\sin(\theta_2+\gamma)=\sin\theta_2\cos\gamma+\cos\theta_2\sin\gamma
+\]
+
+نحصل على:
+\[
+r = (l_2+L\cos\gamma)\cos\theta_2 - L\sin\gamma\sin\theta_2
+\]
+\[
+s = (l_2+L\cos\gamma)\sin\theta_2 + L\sin\gamma\cos\theta_2
+\]
+
+نضرب المعادلة الأولى في $(l_2+L\cos\gamma)$:
+\[
+r(l_2+L\cos\gamma)
+=
+(l_2+L\cos\gamma)^2\cos\theta_2
+-
+L\sin\gamma(l_2+L\cos\gamma)\sin\theta_2
+\]
+
+ونضرب المعادلة الثانية في $L\sin\gamma$:
+\[
+sL\sin\gamma
+=
+L\sin\gamma(l_2+L\cos\gamma)\sin\theta_2
++
+L^2\sin^2\gamma\cos\theta_2
+\]
+
+بجمع المعادلتين نحصل على:
+\[
+r(l_2+L\cos\gamma)+sL\sin\gamma
+=
+\left[(l_2+L\cos\gamma)^2+L^2\sin^2\gamma\right]\cos\theta_2
+\]
+
+وبتوسيع الحد داخل القوس:
+\[
+(l_2+L\cos\gamma)^2+L^2\sin^2\gamma
+=
+l_2^2+2l_2L\cos\gamma+L^2\cos^2\gamma+L^2\sin^2\gamma
+\]
+
+وباستخدام الهوية:
+\[
+\cos^2\gamma+\sin^2\gamma=1
+\]
+
+نحصل على:
+\[
+(l_2+L\cos\gamma)^2+L^2\sin^2\gamma
+=
+l_2^2+L^2+2l_2L\cos\gamma
+\]
+
+أي:
+\[
+r(l_2+L\cos\gamma)+sL\sin\gamma
+=
+\left(l_2^2+L^2+2l_2L\cos\gamma\right)\cos\theta_2
+\]
+
+ومنها:
+\[
+\cos\theta_2 =
+\frac{r(l_2+L\cos\gamma)+sL\sin\gamma}
+{l_2^2+L^2+2l_2L\cos\gamma}
+\]
+
+وبالمثل، نضرب المعادلة الثانية في $(l_2+L\cos\gamma)$:
+\[
+s(l_2+L\cos\gamma)
+=
+(l_2+L\cos\gamma)^2\sin\theta_2
++
+L\sin\gamma(l_2+L\cos\gamma)\cos\theta_2
+\]
+
+ونضرب المعادلة الأولى في $L\sin\gamma$:
+\[
+rL\sin\gamma
+=
+L\sin\gamma(l_2+L\cos\gamma)\cos\theta_2
+-
+L^2\sin^2\gamma\sin\theta_2
+\]
+
+بطرح المعادلتين نحصل على:
+\[
+s(l_2+L\cos\gamma)-rL\sin\gamma
+=
+\left[(l_2+L\cos\gamma)^2+L^2\sin^2\gamma\right]\sin\theta_2
+\]
+
+وبالتالي:
+\[
+s(l_2+L\cos\gamma)-rL\sin\gamma
+=
+\left(l_2^2+L^2+2l_2L\cos\gamma\right)\sin\theta_2
+\]
+
+ومن جهة أخرى، وبالرجوع إلى العلاقة المستنتجة سابقًا:
+\[
+r^2+s^2=l_2^2+L^2+2l_2L\cos\gamma
+\]
+
+فإن المقام يمكن كتابته على الصورة:
+\[
+l_2^2+L^2+2l_2L\cos\gamma = r^2+s^2
+\]
+
+وعليه تصبح العلاقتان:
+\[
+\cos\theta_2 =
+\frac{r(l_2+L\cos\gamma)+sL\sin\gamma}
+{r^2+s^2}
+\]
+\[
+\sin\theta_2 =
+\frac{s(l_2+L\cos\gamma)-rL\sin\gamma}
+{r^2+s^2}
+\]
+
+وبالتالي نحصل على:
+\[
+\theta_2=
+\mathrm{atan2}\left(\sin\theta_2,\cos\theta_2\right)
+\]
+
+\paragraph{حساب الزاويتين $\theta_4$ و$\theta_5$}
+
+بعد إيجاد الزوايا $\theta_1$ و$\theta_2$ و$\theta_3$، تصبح مصفوفة الدوران $R_3^0$ معلومة بالكامل، حيث تُستنتج من حاصل ضرب المصفوفات الثلاث الأولى.
+
+نبدأ بكتابة مصفوفة الدوران المرتبطة بالمفصلين الأخيرين:
+
+\begin{equation}
+R_5^3 = R_4^3 \, R_5^4
+\tag{1}
+\end{equation}
+
+وباستخراج الجزء الدوراني من $T_{34}$ و $T_{45}$ نحصل على:
+
+\[
+R_4^3 =
+\begin{bmatrix}
+- \cos\theta_4 & 0 & - \sin\theta_4 \\
+- \sin\theta_4 & 0 & \cos\theta_4 \\
+0 & 1 & 0
+\end{bmatrix}
+\]
+
+\[
+R_5^4 =
+\begin{bmatrix}
+- \sin\theta_5 & - \cos\theta_5 & 0 \\
+\cos\theta_5 & - \sin\theta_5 & 0 \\
+0 & 0 & 1
+\end{bmatrix}
+\]
+
+وبالتالي من (1):
+\begin{equation}
+R_5^3 =
+\begin{bmatrix}
+\cos\theta_4 \sin\theta_5 & \cos\theta_4 \cos\theta_5 & - \sin\theta_4 \\
+\sin\theta_4 \sin\theta_5 & \sin\theta_4 \cos\theta_5 & \cos\theta_4 \\
+\cos\theta_5 & - \sin\theta_5 & 0
+\end{bmatrix}
+\tag{2}
+\end{equation}
+
+ومن جهة أخرى:
+\begin{equation}
+R_5^3 = (R_3^0)^T \, R_5^0
+\tag{3}
+\end{equation}
+
+حيث أن:
+\[
+R_5^0 =
+\begin{bmatrix}
+r_{11} & r_{12} & r_{13} \\
+r_{21} & r_{22} & r_{23} \\
+r_{31} & r_{32} & r_{33}
+\end{bmatrix}
+\]
+
+كما أن:
+\[
+R_3^0 =
+\begin{bmatrix}
+- \sin(\theta_2+\theta_3)\cos\theta_1 & \sin\theta_1 & \cos\theta_1\cos(\theta_2+\theta_3) \\
+- \sin\theta_1\sin(\theta_2+\theta_3) & - \cos\theta_1 & \sin\theta_1\cos(\theta_2+\theta_3) \\
+\cos(\theta_2+\theta_3) & 0 & \sin(\theta_2+\theta_3)
+\end{bmatrix}
+\]
+
+ومنها:
+\begin{equation}
+(R_3^0)^T =
+\begin{bmatrix}
+- \sin(\theta_2+\theta_3)\cos\theta_1 &
+- \sin\theta_1\sin(\theta_2+\theta_3) &
+\cos(\theta_2+\theta_3)
+\\
+\sin\theta_1 & - \cos\theta_1 & 0
+\\
+\cos\theta_1\cos(\theta_2+\theta_3) &
+\sin\theta_1\cos(\theta_2+\theta_3) &
+\sin(\theta_2+\theta_3)
+\end{bmatrix}
+\tag{4}
+\end{equation}
+
+بالتعويض من (4) في (3) نحصل على:
+\begin{equation}
+R_5^3 =
+\begin{bmatrix}
+- \sin(\theta_2+\theta_3)\cos\theta_1 &
+- \sin\theta_1\sin(\theta_2+\theta_3) &
+\cos(\theta_2+\theta_3)
+\\
+\sin\theta_1 & - \cos\theta_1 & 0
+\\
+\cos\theta_1\cos(\theta_2+\theta_3) &
+\sin\theta_1\cos(\theta_2+\theta_3) &
+\sin(\theta_2+\theta_3)
+\end{bmatrix}
+\begin{bmatrix}
+r_{11} & r_{12} & r_{13} \\
+r_{21} & r_{22} & r_{23} \\
+r_{31} & r_{32} & r_{33}
+\end{bmatrix}
+\tag{5}
+\end{equation}
+
+بمساواة (2) و(5) نحصل على:
+\[
+\begin{bmatrix}
+c_4 s_5 & c_4 c_5 & -s_4 \\
+s_4 s_5 & s_4 c_5 & c_4 \\
+c_5 & -s_5 & 0
+\end{bmatrix}
+=
+\begin{bmatrix}
+- s_{23}c_1 & - s_1 s_{23} & c_{23} \\
+s_1 & - c_1 & 0 \\
+c_1 c_{23} & s_1 c_{23} & s_{23}
+\end{bmatrix}
+\begin{bmatrix}
+r_{11} & r_{12} & r_{13} \\
+r_{21} & r_{22} & r_{23} \\
+r_{31} & r_{32} & r_{33}
+\end{bmatrix}
+\]
+
+وبمساواة العناصر المناظرة في طرفي المعادلة نحصل على العلاقات التالية:
+
+من العنصر $(1,3)$:
+\[
+- s_4 = - s_{23} c_1 r_{13} - s_1 s_{23} r_{23} + c_{23} r_{33}
+\]
+ومنها:
+\[
+s_4 = s_{23} c_1 r_{13} + s_1 s_{23} r_{23} - c_{23} r_{33}
+\]
+
+من العنصر $(2,3)$:
+\[
+c_4 = s_1 r_{13} - c_1 r_{23}
+\]
+
+من العنصر $(3,1)$:
+\[
+c_5 = c_1 c_{23} r_{11} + s_1 c_{23} r_{21} + s_{23} r_{31}
+\]
+
+من العنصر $(3,2)$:
+\[
+- s_5 = c_1 c_{23} r_{12} + s_1 c_{23} r_{22} + s_{23} r_{32}
+\]
+ومنها:
+\[
+s_5 = - \left( c_1 c_{23} r_{12} + s_1 c_{23} r_{22} + s_{23} r_{32} \right)
+\]
+
+وبالتالي يمكن حساب الزاويتين $\theta_4$ و$\theta_5$ كما يلي:
+\[
+\theta_4 = \mathrm{atan2}(s_4, c_4)
+\]
+\[
+\theta_5 = \mathrm{atan2}(s_5, c_5)
+\]

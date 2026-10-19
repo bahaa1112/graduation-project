@@ -1,0 +1,111 @@
+﻿<Page x:Class="DIY_Robotics_EducativeCell.Page_Prog1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DIY_Robotics_EducativeCell"
+      mc:Ignorable="d" 
+      d:DesignHeight="620" d:DesignWidth="800"
+      Title="Page_Prog1">
+    
+    <StackPanel x:Name="ProgPagePanel">
+        
+        
+        <DockPanel Height="620" Width="800" Margin="0,0,0,0">
+            <Border CornerRadius="6" BorderBrush="#003E69" Background="#F0F0F0" BorderThickness="6" DockPanel.Dock="Top">
+                <StackPanel Orientation="Vertical">
+
+
+                    <TextBlock Text="  Program" Width="808" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="25" Foreground="White" Background="#003E69" Margin="-2,-2,-2,0"/>
+
+
+
+
+                    <StackPanel Orientation="Vertical" Height="485">
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Button Content="Save Program" Width="150" Margin="0,5,0,0" Foreground="White" FontSize="18" FontWeight="Bold" BorderBrush="White" Background="#003E69" BorderThickness="4" Click="Btn_SaveProg_Clicked" />
+                        <Button Content="Load Program" Width="150" Margin="10,5,0,0" Foreground="White" FontSize="18" FontWeight="Bold" BorderBrush="White" Background="#003E69" BorderThickness="4" Click="Btn_LoadProg_Clicked" />
+                    </StackPanel>
+                        
+                        
+                            <Grid Name="Prog1Grid" Margin="0,20,0,0">
+                            
+                        </Grid>
+
+                        <Popup Name="ArgPopup" Height="95" Width="790">
+                            <StackPanel Orientation="Horizontal" Background="#003E69">
+
+                                <StackPanel Orientation="Vertical" Background="#003E69"  Margin="30,0,0,0">
+                                    <TextBlock x:Name="Arg1Box" Text="Arg1" Background="#003E69" Foreground="White"></TextBlock>
+                                    <Button x:Name="BtnArg1_1" Content="1" Width="50" Margin="0,5,0,0" Foreground="White" FontSize="12" FontWeight="Bold" BorderBrush="White" Background="#003E69" BorderThickness="2" IsEnabled="False" Click="Btn_popupArg1_1_Clicked" />
+                                    <Button x:Name="BtnArg1_2" Content="2" Width="50" Margin="0,0,0,0" Foreground="White" FontSize="12" FontWeight="Bold" BorderBrush="White" Background="#003E69" BorderThickness="2" IsEnabled="False" Click="Btn_popupArg1_2_Clicked" />
+                                    <Button x:Name="BtnArg1_3" Content="3" Width="50" Margin="0,0,0,0" Foreground="White" FontSize="12" FontWeight="Bold" BorderBrush="White" Background="#003E69" BorderThickness="2" IsEnabled="False" Click="Btn_popupArg1_3_Clicked" />
+                                </StackPanel>
+
+                                <StackPanel Orientation="Vertical" Background="#003E69"  Margin="0,30,0,0">
+                                    <Button x:Name="BtnArg1_4" Content="4" Width="50" Margin="0,0,0,0" Foreground="White" FontSize="12" FontWeight="Bold" BorderBrush="White" Background="#003E69" BorderThickness="2" IsEnabled="False" Click="Btn_popupArg1_4_Clicked" />
+                                    <Button x:Name="BtnArg1_5" Content="5" Width="50" Margin="0,0,0,0" Foreground="White" FontSize="12" FontWeight="Bold" BorderBrush="White" Background="#003E69" BorderThickness="2" IsEnabled="False" Click="Btn_popupArg1_5_Clicked" />
+                                </StackPanel>
+
+                                <StackPanel Orientation="Vertical" Background="#003E69" Margin="30,0,0,0">
+                                    <TextBlock x:Name="Arg2Box" Text="Arg2" Background="#003E69" Foreground="White"></TextBlock>
+
+                                    <Button x:Name="BtnArg2_1" Content="1" Width="50" Margin="0,5,0,0" Foreground="White" FontSize="12" FontWeight="Bold" BorderBrush="White" Background="#003E69" BorderThickness="2" IsEnabled="False" Click="Btn_popupArg2_1_Clicked" />
+                                    <Button x:Name="BtnArg2_2" Content="2" Width="50" Margin="0,0,0,0" Foreground="White" FontSize="12" FontWeight="Bold" BorderBrush="White" Background="#003E69" BorderThickness="2" IsEnabled="False" Click="Btn_popupArg2_2_Clicked" />
+                                    <Button x:Name="BtnArg2_3" Content="3" Width="50" Margin="0,0,0,0" Foreground="White" FontSize="12" FontWeight="Bold" BorderBrush="White" Background="#003E69" BorderThickness="2" IsEnabled="False" Click="Btn_popupArg2_3_Clicked" />
+                                </StackPanel>
+
+                                <StackPanel Orientation="Vertical" Background="#003E69"  Margin="0,30,0,0">
+                                    <Button x:Name="BtnArg2_4" Content="4" Width="50" Margin="0,0,0,0" Foreground="White" FontSize="12" FontWeight="Bold" BorderBrush="White" Background="#003E69" BorderThickness="2" IsEnabled="False" Click="Btn_popupArg2_4_Clicked" />
+                                    <Button x:Name="BtnArg2_5" Content="5" Width="50" Margin="0,0,0,0" Foreground="White" FontSize="12" FontWeight="Bold" BorderBrush="White" Background="#003E69" BorderThickness="2" IsEnabled="False" Click="Btn_popupArg2_5_Clicked" />
+                                </StackPanel>
+
+
+                                <StackPanel Orientation="Vertical" Background="#003E69" Margin="100,20,0,0">
+                                    <TextBlock x:Name="Arg1PreviewBox" FontSize="15" FontWeight="Bold" Width="100" Text=" " Background="#003E69" Foreground="White"></TextBlock>
+                                    <TextBlock x:Name="Arg2PreviewBox" FontSize="15" FontWeight="Bold" Width="100" Text=" " Background="#003E69" Foreground="White"></TextBlock>
+                                </StackPanel>
+
+                                <StackPanel Orientation="Vertical" Background="#003E69" Margin="30,20,0,0">
+                                    <Button x:Name="BtnPopupAdd" Content="Add Instruction" Width="200" Margin="0,5,0,0" Foreground="White" FontSize="12" FontWeight="Bold" BorderBrush="White" Background="#003E69" BorderThickness="2" IsEnabled="False" Click="Btn_popupAdd_Clicked" />
+                                    <Button Content="Cancel" Width="200" Margin="0,0,0,0" Foreground="White" FontSize="12" FontWeight="Bold" BorderBrush="White" Background="#003E69" BorderThickness="2" Click="Btn_popupCancel_Clicked" />
+                                </StackPanel>
+
+                            </StackPanel> 
+                        </Popup>
+
+
+
+
+
+
+                    </StackPanel>
+
+
+
+                    <StackPanel Orientation="Horizontal" Width="808" Height="100" Background="#003E69" Margin="-2,-2,-2,0">
+                        <Button x:Name="Btn1Prog1" Width="90" Height="90" Margin="10,0,0,0" Click="Btn_Prog1_Point" IsEnabled="False">Point</Button>
+                        <Button x:Name="Btn2Prog1" Width="90" Height="90" Margin="8,0,0,0" Click="Btn_Prog1_Do" IsEnabled="False">Do</Button>
+                        <Button x:Name="Btn3Prog1" Width="90" Height="90" Margin="8,0,0,0" Click="Btn_Prog1_JumpLbl" IsEnabled="False">Jump Label</Button>
+                        <Button x:Name="Btn4Prog1" Width="90" Height="90" Margin="8,0,0,0" Click="Btn_Prog1_WaitDi" IsEnabled="False">Wait Di</Button>
+                        <Button x:Name="Btn5Prog1" Width="90" Height="90" Margin="8,0,0,0" IsEnabled="False" Click="Click_Prog1_AddLine">Add Line</Button>
+                        <Button x:Name="Btn6Prog1" Width="90" Height="90" Margin="8,0,0,0" IsEnabled="False" Click="Click_Prog1_DeleteLine">Delete Line</Button>
+                        <StackPanel Orientation="Vertical">
+                            <Button x:Name="Btn7Prog1" Width="90" Height="40" Margin="8,6,0,0" Click="Btn_Prog1_PageUp" IsEnabled="False">Page Up</Button>
+                            <Button x:Name="Btn8Prog1" Width="90" Height="40" Margin="8,6,0,0" Click="Btn_Prog1_PageDown" IsEnabled="False">Page Down</Button>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical">
+                            <Button x:Name="Btn9Prog1" Width="90" Height="40" Margin="8,6,0,0" Click="Btn_Prog1_UP" IsEnabled="False">UP</Button>
+                            <Button x:Name="Btn10Prog1" Width="90" Height="40" Margin="8,6,0,0" Click="Btn_Prog1_DOWN" IsEnabled="False">DOWN</Button>
+                        </StackPanel>
+                    </StackPanel>
+
+                </StackPanel>
+             </Border>
+         </DockPanel>
+    </StackPanel>
+
+
+
+</Page>

@@ -1,0 +1,45 @@
+%%  ÂÌ∆… «·‰Ÿ«„ Ê› Õ «·« ’«·
+clc;
+clear;
+close all;
+
+disp('--- »œ¡  ÂÌ∆… «·‰Ÿ«„ ---');
+
+% 1.  ⁄—Ì› «·—Ê»Ê  (DH Parameters) „⁄ «·≈“«Õ«  Ê«·ÕœÊœ
+L(1) = Link([0, 0.05, 0.017, pi/2]);
+L(2) = Link([0, 0,    0.12,  0]);
+L(3) = Link([0, 0,    0.044, pi/2]);
+L(4) = Link([0, 0.15, 0,     pi/2]);
+L(5) = Link([0, 0,    0.152, 0]);
+
+%L(1).offset = pi/2;
+L(2).offset = pi/2;  
+L(4).offset = pi/2;  
+L(5).offset = pi/2;  
+
+L(1).qlim = deg2rad([-90 90]);
+L(2).qlim = deg2rad([-90 90]);
+L(3).qlim = deg2rad([-90 90]);
+L(4).qlim = deg2rad([-90 90]);
+L(5).qlim = deg2rad([-90 90]);
+
+MYRobot = SerialLink(L, 'name', 'DIY_ARM');
+MYRobot.base = eye(4);
+q_init = [0 0 0 0 0]; % «·Ê÷⁄ «·«» œ«∆Ì ··Õ”«»
+
+% 2. ≈⁄œ«œ Ê› Õ „‰›– «·”Ì—Ì«· 
+instrreset; %  ‰ŸÌ› «·„‰«›– «·⁄«·ﬁ…
+s = serial('COM9'); 
+set(s, 'BaudRate', 9600); 
+set(s, 'Timeout', 5);
+set(s, 'Terminator', 'LF');
+
+try
+    disp('Ã«—Ì › Õ „‰›– «·”Ì—Ì«·...');
+    fopen(s);
+    disp('«‰ Ÿ«— «” ﬁ—«— «·« ’«· (3 ÀÊ«‰Ú)...');
+    pause(3); 
+    disp('? «·‰Ÿ«„ Ã«Â“  „«„« Ê«·« ’«· „” ﬁ—!');
+catch
+    error('›‘· › Õ «·„‰›– COM9.  √ﬂœ „‰ «·≈⁄œ«œ«  √Ê «·« ’«· «·«› —«÷Ì.');
+end

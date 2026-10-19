@@ -1,0 +1,38 @@
+\section{معالجة الأوامر وربطها بالتحكم عالي المستوى (\textenglish{HLC})}
+بعد تحويل الإشارة الصوتية إلى نص مكتوب عبر حزمة \textenglish{Vosk}، يتم تمرير النص إلى خوارزمية استخلاص الكلمات المفتاحية (\textenglish{Keyword Spotting}) المبرمجة داخل وحدة المعالجة. تعتمد هذه الخوارزمية على تصفية النص وإجراء مطابقة مباشرة مع قائمة الأوامر المعرّفة مسبقاً في النظام (مثل: يمين، يسار، التقط، اترك) لتجاهل أي كلام جانبي غير معنيّ بالتحكم.
+
+عند رصد كلمة مفتاحية معينة، يتم ترجمتها فوراً إلى أمر تنفيذي يغذي حلقة التحكم عالي المستوى (\textenglish{HLC}). يوضح الشكل~\ref{fig:voice_command_diagram} التسلسل المبسط لتدفق الأوامر من الإدخال الصوتي وحتى التنفيذ الحركي للذراع:
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[
+        node distance=1.5cm,
+        auto,
+        block/.style={
+            rectangle,
+            draw=black,
+            fill=gray!10,
+            text width=2.5cm,
+            text centered,
+            rounded corners,
+            minimum height=1.2cm,
+            font=\englishfont\small
+        },
+        line/.style={draw, -{Latex[length=2.5mm]}, thick}
+    ]
+        % Nodes
+        \node [block] (audio) {Voice Command};
+        \node [block, right=of audio] (text) {Speech-to-Text\\(Vosk)};
+        \node [block, right=of text] (command) {Command Mapping};
+        \node [block, right=of command] (action) {Robot Execution};
+
+        % Edges
+        \path [line] (audio) -- node[above, font=\englishfont\footnotesize]{Audio} (text);
+        \path [line] (text) -- node[above, font=\englishfont\footnotesize]{Text} (command);
+        \path [line] (command) -- node[above, font=\englishfont\footnotesize]{Action} (action);
+    \end{tikzpicture}
+    \caption{التسلسل المبسط لتدفق الأوامر الصوتية وتحويلها إلى أفعال حركية}
+    \label{fig:voice_command_diagram}
+\end{figure}
+
+بمجرد تحديد الأمر واستخراج الهدف الحركي، يتم تحديث شعاع الموضع المرجعي الكارتزي $X_{\text{ref}}$، ليقوم بلوك الحركيات العكسية (\textenglish{IK}) بحساب الزوايا المرجعية للمفاصل $q_{\text{ref}}$ وتمريرها لحظياً إلى طبقة التحكم منخفض المستوى (\textenglish{LLC}) لتوجيه المحركات نحو الوضعية الجديدة بسلاسة وبشكل آمن ومستقر.

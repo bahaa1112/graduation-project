@@ -1,0 +1,38 @@
+\makeatletter
+
+\newcommand*{\gradeType}[1]{\gdef\@gradeType{#1}}
+\newcommand*{\firstExaminer}[1]{\gdef\@firstExaminer{#1}}
+\newcommand*{\secondExaminer}[1]{\gdef\@secondExaminer{#1}}
+\newcommand*{\matrikelnr}[1]{\gdef\@matrikelnr{#1}}
+\newcommand*{\submitDate}[1]{\gdef\@submitDate{#1}}
+
+\renewcommand*{\maketitle}{
+	\begin{titlepage}
+		\newgeometry{left=2.5cm,right=2.5cm,top=2.0cm,bottom=2.5cm}
+		\begin{center}
+			\includegraphics[width=0.5\textwidth]{resources/images/logo_of_aleppo_uni}				
+			\vfill
+			{\Large \@title\par}
+			\vskip 0.5cm
+			{\large \bfseries  مشروع تخرج  \par}
+			\vskip 0.5cm
+			{\large مقدم لنيل\\ \bfseries \@gradeType}
+			\vskip 0.5cm
+			{\large جامعة حلب}
+			\vskip 0.5cm
+			{\large  كلية الهندسة الكهربائية و الألكترونية\\ قسم هندسة التحكم الآلي والأتمتة الصناعية}
+			\vfill
+			\begin{flushright}
+				\begin{tabular}[t]{rl}
+					المشرف: &\@firstExaminer\\
+					
+					الكاتب: &\@author\\
+					الرقم الجامعي : & \@matrikelnr\\
+					تاريخ التقديم : & \@submitDate\\
+				\end{tabular}
+			\end{flushright}
+		\end{center}
+		\restoregeometry
+	\end{titlepage}
+}
+\makeatother

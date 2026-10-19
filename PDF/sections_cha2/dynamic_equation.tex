@@ -1,0 +1,267 @@
+\section{الشكل المصفوفي العام للنموذج الديناميكي للذراع }
+
+
+بما أن الذراع الروبوتية المدروسة تتكون من خمس درجات حرية، فإن عدد متحولات المفاصل يساوي:
+
+\begin{equation}
+n = 5
+\end{equation}
+
+وبالتالي يمكن كتابة متجه المتحولات المفصلية بالشكل:
+
+\begin{equation}
+q =
+\begin{bmatrix}
+\theta_1 &
+\theta_2 &
+\theta_3 &
+\theta_4 &
+\theta_5
+\end{bmatrix}^{T}
+\end{equation}
+
+كما يمكن كتابة متجه السرعات المفصلية بالشكل:
+
+\begin{equation}
+\dot{q} =
+\begin{bmatrix}
+\dot{\theta}_1 &
+\dot{\theta}_2 &
+\dot{\theta}_3 &
+\dot{\theta}_4 &
+\dot{\theta}_5
+\end{bmatrix}^{T}
+\end{equation}
+
+أما متجه التسارعات المفصلية فيكتب كما يلي:
+
+\begin{equation}
+\ddot{q} =
+\begin{bmatrix}
+\ddot{\theta}_1 &
+\ddot{\theta}_2 &
+\ddot{\theta}_3 &
+\ddot{\theta}_4 &
+\ddot{\theta}_5
+\end{bmatrix}^{T}
+\end{equation}
+
+ويمثل متجه العزوم المطبقة على مفاصل الذراع بالشكل:
+
+\begin{equation}
+\tau =
+\begin{bmatrix}
+\tau_1 \\
+\tau_2 \\
+\tau_3 \\
+\tau_4 \\
+\tau_5
+\end{bmatrix}
+\end{equation}
+
+وبالتعويض عن عدد درجات الحرية $n=5$ في النموذج الديناميكي العام الناتج عن صياغة لاغرانج، يمكن كتابة النموذج المصفوفي للذراع الروبوتية كما يلي:
+
+\begin{equation}
+\tau =
+\left(
+D(q) + I_{act}
+\right)\ddot{q}
++
+D_{cen}(q,\dot{q})
++
+D_{cor}(q,\dot{q})
++
+D_g(q)
+\end{equation}
+
+حيث تمثل $D(q)$ مصفوفة العطالة، وتمثل $I_{act}$ مصفوفة عزوم القصور الذاتي للمشغلات، بينما تمثل $D_{cen}$ حدود القوى الطاردة المركزية، وتمثل $D_{cor}$ حدود قوى كوريوليس، أما $D_g$ فيمثل متجه تأثير الجاذبية.
+
+\subsection*{مصفوفة العطالة}
+
+تعطى مصفوفة العطالة للذراع الروبوتية ذات خمس درجات حرية بالشكل:
+
+\begin{equation}
+D(q)=
+\begin{bmatrix}
+D_{11} & D_{12} & D_{13} & D_{14} & D_{15} \\
+D_{21} & D_{22} & D_{23} & D_{24} & D_{25} \\
+D_{31} & D_{32} & D_{33} & D_{34} & D_{35} \\
+D_{41} & D_{42} & D_{43} & D_{44} & D_{45} \\
+D_{51} & D_{52} & D_{53} & D_{54} & D_{55}
+\end{bmatrix}
+\end{equation}
+
+وتؤثر هذه المصفوفة في متجه التسارعات المفصلية وفق العلاقة:
+
+\begin{equation}
+D(q)\ddot{q} =
+\begin{bmatrix}
+D_{11} & D_{12} & D_{13} & D_{14} & D_{15} \\
+D_{21} & D_{22} & D_{23} & D_{24} & D_{25} \\
+D_{31} & D_{32} & D_{33} & D_{34} & D_{35} \\
+D_{41} & D_{42} & D_{43} & D_{44} & D_{45} \\
+D_{51} & D_{52} & D_{53} & D_{54} & D_{55}
+\end{bmatrix}
+\begin{bmatrix}
+\ddot{\theta}_1 \\
+\ddot{\theta}_2 \\
+\ddot{\theta}_3 \\
+\ddot{\theta}_4 \\
+\ddot{\theta}_5
+\end{bmatrix}
+\end{equation}
+
+\subsection*{مصفوفة عزوم القصور الذاتي للمشغلات}
+
+تؤخذ عزوم القصور الذاتي للمشغلات بعين الاعتبار من خلال مصفوفة قطرية، وذلك لأن كل مشغل يؤثر بشكل مباشر على المفصل المرتبط به. وتكتب هذه المصفوفة بالشكل:
+
+\begin{equation}
+I_{act} =
+\begin{bmatrix}
+I_{1(act)} & 0 & 0 & 0 & 0 \\
+0 & I_{2(act)} & 0 & 0 & 0 \\
+0 & 0 & I_{3(act)} & 0 & 0 \\
+0 & 0 & 0 & I_{4(act)} & 0 \\
+0 & 0 & 0 & 0 & I_{5(act)}
+\end{bmatrix}
+\end{equation}
+
+وبالتالي يكون تأثير قصور المشغلات على التسارعات المفصلية كما يلي:
+
+\begin{equation}
+I_{act}\ddot{q} =
+\begin{bmatrix}
+I_{1(act)} & 0 & 0 & 0 & 0 \\
+0 & I_{2(act)} & 0 & 0 & 0 \\
+0 & 0 & I_{3(act)} & 0 & 0 \\
+0 & 0 & 0 & I_{4(act)} & 0 \\
+0 & 0 & 0 & 0 & I_{5(act)}
+\end{bmatrix}
+\begin{bmatrix}
+\ddot{\theta}_1 \\
+\ddot{\theta}_2 \\
+\ddot{\theta}_3 \\
+\ddot{\theta}_4 \\
+\ddot{\theta}_5
+\end{bmatrix}
+\end{equation}
+
+\subsection*{حدود القوى الطاردة المركزية}
+
+تنتج حدود القوى الطاردة المركزية عن مربعات السرعات الزاوية للمفاصل، ويمكن كتابتها بالشكل المصفوفي التالي:
+
+\begin{equation}
+D_{cen}(q,\dot{q}) =
+\begin{bmatrix}
+D_{111} & D_{122} & D_{133} & D_{144} & D_{155} \\
+D_{211} & D_{222} & D_{233} & D_{244} & D_{255} \\
+D_{311} & D_{322} & D_{333} & D_{344} & D_{355} \\
+D_{411} & D_{422} & D_{433} & D_{444} & D_{455} \\
+D_{511} & D_{522} & D_{533} & D_{544} & D_{555}
+\end{bmatrix}
+\begin{bmatrix}
+\dot{\theta}_1^2 \\
+\dot{\theta}_2^2 \\
+\dot{\theta}_3^2 \\
+\dot{\theta}_4^2 \\
+\dot{\theta}_5^2
+\end{bmatrix}
+\end{equation}
+
+\subsection*{حدود قوى كوريوليس}
+
+تنتج حدود كوريوليس والقوى النابذة المركزية عن جداءات السرعات الزاوية للمفاصل، وتظهر هذه الحدود في النموذج الديناميكي كما يلي:
+\begin{equation*}
+\resizebox{\textwidth}{!}{$
+D_{cor}(q,\dot{q}) =
+\begin{bmatrix}
+D_{112} & D_{113} & D_{114} & D_{115} & D_{123} & D_{124} & D_{125} & D_{134} & D_{135} & D_{145} \\
+D_{212} & D_{213} & D_{214} & D_{215} & D_{223} & D_{224} & D_{225} & D_{234} & D_{235} & D_{245} \\
+D_{312} & D_{313} & D_{314} & D_{315} & D_{323} & D_{324} & D_{325} & D_{334} & D_{335} & D_{345} \\
+D_{412} & D_{413} & D_{414} & D_{415} & D_{423} & D_{424} & D_{425} & D_{434} & D_{435} & D_{445} \\
+D_{512} & D_{513} & D_{514} & D_{515} & D_{523} & D_{524} & D_{525} & D_{534} & D_{535} & D_{545}
+\end{bmatrix}
+\begin{bmatrix}
+\dot{\theta}_1\dot{\theta}_2 \\
+\dot{\theta}_1\dot{\theta}_3 \\
+\dot{\theta}_1\dot{\theta}_4 \\
+\dot{\theta}_1\dot{\theta}_5 \\
+\dot{\theta}_2\dot{\theta}_3 \\
+\dot{\theta}_2\dot{\theta}_4 \\
+\dot{\theta}_2\dot{\theta}_5 \\
+\dot{\theta}_3\dot{\theta}_4 \\
+\dot{\theta}_3\dot{\theta}_5 \\
+\dot{\theta}_4\dot{\theta}_5
+\end{bmatrix}
+$}
+\end{equation*}
+
+\subsection*{متجه الجاذبية}
+
+يمثل متجه الجاذبية العزوم الناتجة عن تأثير وزن الوصلات على مفاصل الذراع الروبوتية، ويكتب بالشكل:
+
+\begin{equation}
+D_g(q)=
+\begin{bmatrix}
+D_1 \\
+D_2 \\
+D_3 \\
+D_4 \\
+D_5
+\end{bmatrix}
+\end{equation}
+
+وبذلك يمكن كتابة النموذج الديناميكي الكامل للذراع الروبوتية ذات خمس درجات حرية على الصورة النهائية التالية:
+
+\begin{equation}
+\begin{bmatrix}
+\tau_1 \\
+\tau_2 \\
+\tau_3 \\
+\tau_4 \\
+\tau_5
+\end{bmatrix}
+=
+\left(
+D(q)+I_{act}
+\right)
+\begin{bmatrix}
+\ddot{\theta}_1 \\
+\ddot{\theta}_2 \\
+\ddot{\theta}_3 \\
+\ddot{\theta}_4 \\
+\ddot{\theta}_5
+\end{bmatrix}
++
+D_{cen}(q,\dot{q})
++
+D_{cor}(q,\dot{q})
++
+\begin{bmatrix}
+D_1 \\
+D_2 \\
+D_3 \\
+D_4 \\
+D_5
+\end{bmatrix}
+\end{equation}
+
+كما يمكن التعبير عن النموذج الديناميكي بالصورة القياسية الأكثر استخدامًا في نمذجة الأذرع الروبوتية كما يلي:
+
+\begin{equation}
+\tau =
+M(q)\ddot{q}
++
+C(q,\dot{q})\dot{q}
++
+G(q)
+\end{equation}
+
+حيث إن:
+
+\begin{itemize}
+    \item $M(q)$ تمثل مصفوفة العطالة الكلية للذراع مع تأثير المشغلات.
+    \item $C(q,\dot{q})\dot{q}$ تمثل حدود قوى كوريوليس والقوى الطاردة المركزية.
+    \item $G(q)$ تمثل متجه الجاذبية.
+\end{itemize}
+

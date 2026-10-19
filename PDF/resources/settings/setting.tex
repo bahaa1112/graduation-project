@@ -1,0 +1,56 @@
+%==================== SETTINGS ====================
+
+% دعم الألوان
+\usepackage{xcolor}
+
+% المسافات بين الأسطر
+\usepackage{setspace}
+\onehalfspacing
+
+% تنسيق الفقرات
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+% دعم الصور
+\usepackage{graphicx}
+\graphicspath{{images/}}
+
+% الجداول
+\usepackage{booktabs}
+\usepackage{array}
+
+% تحسين النص
+\usepackage{microtype}
+
+% الروابط
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+    pdftitle={مشروع التخرج},
+    pdfauthor={بهاء الياسين},
+    pdfpagemode=FullScreen,
+}
+
+% ترقيم الصفحات في الأسفل
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\thepage}
+
+% إزالة الخط العلوي
+\renewcommand{\headrulewidth}{0pt}
+
+% دعم القوائم
+\usepackage{enumitem}
+
+% دعم الكود البرمجي (اختياري)
+\usepackage{listings}
+
+\lstset{
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    frame=single
+}

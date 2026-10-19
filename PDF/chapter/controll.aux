@@ -1,0 +1,218 @@
+\relax 
+\providecommand\zref@newlabel[2]{}
+\providecommand\hyper@newdestlabel[2]{}
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}تصميم انظمة التحكم للذراع الروبوتية}{50}{chapter.4}\protected@file@percent }
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}مقدمة}{50}{section.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}صياغة النموذج الديناميكي لأغراض التحكم}{50}{section.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}النموذج الديناميكي المعتمد}{51}{subsection.4.2.1}\protected@file@percent }
+\newlabel{eq:control_basic_dynamic_model}{{{1}}{51}{النموذج الديناميكي المعتمد}{equation.4.1}{}}
+\newlabel{eq:control_total_inertia}{{{2}}{51}{النموذج الديناميكي المعتمد}{equation.4.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}عزل تسارع المفاصل}{51}{subsection.4.2.2}\protected@file@percent }
+\newlabel{eq:control_ddq_isolated_basic}{{{4}}{51}{عزل تسارع المفاصل}{equation.4.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.3}نمذجة المشغلات}{52}{subsection.4.2.3}\protected@file@percent }
+\newlabel{eq:control_actuator_model}{{{5}}{52}{نمذجة المشغلات}{equation.4.5}{}}
+\newlabel{eq:control_ku_matrix}{{{6}}{52}{نمذجة المشغلات}{equation.4.6}{}}
+\newlabel{eq:control_kv_matrix}{{{7}}{52}{نمذجة المشغلات}{equation.4.7}{}}
+\newlabel{eq:control_ka_matrix}{{{8}}{52}{نمذجة المشغلات}{equation.4.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.4}دمج نموذج المشغلات مع معادلة الحركة}{52}{subsection.4.2.4}\protected@file@percent }
+\newlabel{eq:control_tau_equals_tau_act}{{{9}}{53}{دمج نموذج المشغلات مع معادلة الحركة}{equation.4.9}{}}
+\newlabel{eq:control_merged_dynamic_model}{{{12}}{53}{دمج نموذج المشغلات مع معادلة الحركة}{equation.4.12}{}}
+\newlabel{eq:control_ddq_actuated}{{{13}}{53}{دمج نموذج المشغلات مع معادلة الحركة}{equation.4.13}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.5}التمثيل غير الخطي في فضاء الحالة}{53}{subsection.4.2.5}\protected@file@percent }
+\newlabel{eq:control_state_vector}{{{14}}{54}{التمثيل غير الخطي في فضاء الحالة}{equation.4.14}{}}
+\newlabel{eq:control_state_vector_explicit}{{{15}}{54}{التمثيل غير الخطي في فضاء الحالة}{equation.4.15}{}}
+\newlabel{eq:control_state_derivative}{{{16}}{54}{التمثيل غير الخطي في فضاء الحالة}{equation.4.16}{}}
+\newlabel{eq:control_nonlinear_state_space}{{{17}}{54}{التمثيل غير الخطي في فضاء الحالة}{equation.4.17}{}}
+\newlabel{eq:control_general_nonlinear_model}{{{18}}{54}{التمثيل غير الخطي في فضاء الحالة}{equation.4.18}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.6}تمثيل النموذج بمصفوفات الحالة}{55}{subsection.4.2.6}\protected@file@percent }
+\newlabel{eq:control_H_matrix}{{{20}}{55}{تمثيل النموذج بمصفوفات الحالة}{equation.4.20}{}}
+\newlabel{eq:control_ddq_H_form}{{{21}}{55}{تمثيل النموذج بمصفوفات الحالة}{equation.4.21}{}}
+\newlabel{eq:control_state_space_AB_r}{{{23}}{55}{تمثيل النموذج بمصفوفات الحالة}{equation.4.23}{}}
+\newlabel{eq:control_A_matrix}{{{24}}{56}{تمثيل النموذج بمصفوفات الحالة}{equation.4.24}{}}
+\newlabel{eq:control_B_matrix}{{{25}}{56}{تمثيل النموذج بمصفوفات الحالة}{equation.4.25}{}}
+\newlabel{eq:control_r_vector}{{{26}}{56}{تمثيل النموذج بمصفوفات الحالة}{equation.4.26}{}}
+\newlabel{eq:control_full_state_space_matrix_form}{{{27}}{56}{تمثيل النموذج بمصفوفات الحالة}{equation.4.27}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.7}خرج النظام}{56}{subsection.4.2.7}\protected@file@percent }
+\newlabel{eq:control_output_q}{{{28}}{56}{خرج النظام}{equation.4.28}{}}
+\newlabel{eq:control_output_vector}{{{30}}{57}{خرج النظام}{equation.4.30}{}}
+\newlabel{eq:control_output_state_relation}{{{31}}{57}{خرج النظام}{equation.4.31}{}}
+\newlabel{eq:control_C_matrix}{{{32}}{57}{خرج النظام}{equation.4.32}{}}
+\newlabel{eq:control_D_matrix}{{{33}}{58}{خرج النظام}{equation.4.33}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}التحكم منخفض المستوى \pLRE {Low-Level Control}}{58}{section.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.1}تطبيق متحكم \pLRE {PID} مع تعويض الجاذبية}{58}{subsection.4.3.1}\protected@file@percent }
+\newlabel{subsec:pid_gravity_compensation}{{4.3.1}{58}{تطبيق متحكم \LR {PID} مع تعويض الجاذبية}{subsection.4.3.1}{}}
+\newlabel{eq:pid_position_error}{{{34}}{58}{تطبيق متحكم \LR {PID} مع تعويض الجاذبية}{equation.4.34}{}}
+\newlabel{eq:pid_velocity_error}{{{35}}{58}{تطبيق متحكم \LR {PID} مع تعويض الجاذبية}{equation.4.35}{}}
+\newlabel{eq:pid_integral_error}{{{36}}{59}{تطبيق متحكم \LR {PID} مع تعويض الجاذبية}{equation.4.36}{}}
+\newlabel{eq:pid_control_signal}{{{37}}{59}{تطبيق متحكم \LR {PID} مع تعويض الجاذبية}{equation.4.37}{}}
+\newlabel{eq:pid_kp_matrix}{{{38}}{59}{تطبيق متحكم \LR {PID} مع تعويض الجاذبية}{equation.4.38}{}}
+\newlabel{eq:pid_ki_matrix}{{{39}}{59}{تطبيق متحكم \LR {PID} مع تعويض الجاذبية}{equation.4.39}{}}
+\newlabel{eq:pid_kd_matrix}{{{40}}{59}{تطبيق متحكم \LR {PID} مع تعويض الجاذبية}{equation.4.40}{}}
+\newlabel{eq:pid_static_condition}{{{41}}{59}{تطبيق متحكم \LR {PID} مع تعويض الجاذبية}{equation.4.41}{}}
+\newlabel{eq:pid_static_gravity_torque}{{{42}}{59}{تطبيق متحكم \LR {PID} مع تعويض الجاذبية}{equation.4.42}{}}
+\newlabel{eq:pid_static_actuator_model}{{{43}}{60}{تطبيق متحكم \LR {PID} مع تعويض الجاذبية}{equation.4.43}{}}
+\newlabel{eq:pid_gravity_voltage_balance}{{{44}}{60}{تطبيق متحكم \LR {PID} مع تعويض الجاذبية}{equation.4.44}{}}
+\newlabel{eq:pid_gravity_compensation_voltage}{{{45}}{60}{تطبيق متحكم \LR {PID} مع تعويض الجاذبية}{equation.4.45}{}}
+\newlabel{eq:pid_raw_control_signal}{{{46}}{60}{تطبيق متحكم \LR {PID} مع تعويض الجاذبية}{equation.4.46}{}}
+\newlabel{eq:pid_full_control_law}{{{47}}{60}{تطبيق متحكم \LR {PID} مع تعويض الجاذبية}{equation.4.47}{}}
+\newlabel{eq:pid_voltage_limit}{{{48}}{60}{تطبيق متحكم \LR {PID} مع تعويض الجاذبية}{equation.4.48}{}}
+\newlabel{eq:pid_saturated_control_signal}{{{49}}{61}{تطبيق متحكم \LR {PID} مع تعويض الجاذبية}{equation.4.49}{}}
+\newlabel{eq:pid_saturation_function}{{{50}}{61}{تطبيق متحكم \LR {PID} مع تعويض الجاذبية}{equation.4.50}{}}
+\newlabel{eq:pid_closed_loop_acceleration}{{{51}}{61}{تطبيق متحكم \LR {PID} مع تعويض الجاذبية}{equation.4.51}{}}
+\newlabel{eq:pid_augmented_state_vector}{{{52}}{61}{تطبيق متحكم \LR {PID} مع تعويض الجاذبية}{equation.4.52}{}}
+\newlabel{eq:pid_augmented_state_derivative}{{{53}}{61}{تطبيق متحكم \LR {PID} مع تعويض الجاذبية}{equation.4.53}{}}
+\newlabel{eq:pid_integral_error_derivative}{{{54}}{61}{تطبيق متحكم \LR {PID} مع تعويض الجاذبية}{equation.4.54}{}}
+\newlabel{eq:pid_closed_loop_system}{{{55}}{62}{تطبيق متحكم \LR {PID} مع تعويض الجاذبية}{equation.4.55}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces \xpg@aux {numerals=maghrib}{arabic}\ignorespaces \centering  {استجابة مواضع وسرعات مفاصل الذراع باستخدام متحكم \pLRE {PID} مع تعويض الجاذبية}}}{62}{figure.caption.20}\protected@file@percent }
+\newlabel{fig:pid_response}{{4.1}{62}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces \centering {استجابة مواضع وسرعات مفاصل الذراع باستخدام متحكم \LR {PID} مع تعويض الجاذبية}}{figure.caption.20}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.2}تطبيق التحكم التكيفي المعتمد على العزم المحسوب \pLRE {ACTC}}{63}{subsection.4.3.2}\protected@file@percent }
+\newlabel{subsec:adaptive_computed_torque_control}{{4.3.2}{63}{تطبيق التحكم التكيفي المعتمد على العزم المحسوب \LR {ACTC}}{subsection.4.3.2}{}}
+\newlabel{eq:actc_dynamic_model_voltage}{{{56}}{63}{تطبيق التحكم التكيفي المعتمد على العزم المحسوب \LR {ACTC}}{equation.4.56}{}}
+\newlabel{eq:actc_effective_inertia}{{{57}}{63}{تطبيق التحكم التكيفي المعتمد على العزم المحسوب \LR {ACTC}}{equation.4.57}{}}
+\newlabel{eq:actc_effective_model_voltage}{{{58}}{63}{تطبيق التحكم التكيفي المعتمد على العزم المحسوب \LR {ACTC}}{equation.4.58}{}}
+\newlabel{eq:actc_torque_voltage_relation}{{{59}}{63}{تطبيق التحكم التكيفي المعتمد على العزم المحسوب \LR {ACTC}}{equation.4.59}{}}
+\newlabel{eq:actc_mechanical_model}{{{60}}{63}{تطبيق التحكم التكيفي المعتمد على العزم المحسوب \LR {ACTC}}{equation.4.60}{}}
+\newlabel{eq:actc_reference_model_single_joint}{{{61}}{64}{تطبيق التحكم التكيفي المعتمد على العزم المحسوب \LR {ACTC}}{equation.4.61}{}}
+\newlabel{eq:actc_reference_state_space}{{{62}}{64}{تطبيق التحكم التكيفي المعتمد على العزم المحسوب \LR {ACTC}}{equation.4.62}{}}
+\newlabel{eq:actc_reference_state_vector}{{{63}}{64}{تطبيق التحكم التكيفي المعتمد على العزم المحسوب \LR {ACTC}}{equation.4.63}{}}
+\newlabel{eq:actc_Am_matrix}{{{64}}{64}{تطبيق التحكم التكيفي المعتمد على العزم المحسوب \LR {ACTC}}{equation.4.64}{}}
+\newlabel{eq:actc_Bm_matrix}{{{65}}{64}{تطبيق التحكم التكيفي المعتمد على العزم المحسوب \LR {ACTC}}{equation.4.65}{}}
+\newlabel{eq:actc_omega_matrix}{{{66}}{65}{تطبيق التحكم التكيفي المعتمد على العزم المحسوب \LR {ACTC}}{equation.4.66}{}}
+\newlabel{eq:actc_zeta_matrix}{{{67}}{65}{تطبيق التحكم التكيفي المعتمد على العزم المحسوب \LR {ACTC}}{equation.4.67}{}}
+\newlabel{eq:actc_position_error}{{{68}}{65}{تطبيق التحكم التكيفي المعتمد على العزم المحسوب \LR {ACTC}}{equation.4.68}{}}
+\newlabel{eq:actc_velocity_error}{{{69}}{65}{تطبيق التحكم التكيفي المعتمد على العزم المحسوب \LR {ACTC}}{equation.4.69}{}}
+\newlabel{eq:actc_composite_error}{{{70}}{65}{تطبيق التحكم التكيفي المعتمد على العزم المحسوب \LR {ACTC}}{equation.4.70}{}}
+\newlabel{eq:actc_lambda_matrix}{{{71}}{65}{تطبيق التحكم التكيفي المعتمد على العزم المحسوب \LR {ACTC}}{equation.4.71}{}}
+\newlabel{eq:actc_composite_error_zero}{{{72}}{65}{تطبيق التحكم التكيفي المعتمد على العزم المحسوب \LR {ACTC}}{equation.4.72}{}}
+\newlabel{eq:actc_error_dynamics}{{{73}}{66}{تطبيق التحكم التكيفي المعتمد على العزم المحسوب \LR {ACTC}}{equation.4.73}{}}
+\newlabel{eq:actc_error_convergence}{{{74}}{66}{تطبيق التحكم التكيفي المعتمد على العزم المحسوب \LR {ACTC}}{equation.4.74}{}}
+\newlabel{eq:actc_tracking_goal}{{{75}}{66}{تطبيق التحكم التكيفي المعتمد على العزم المحسوب \LR {ACTC}}{equation.4.75}{}}
+\newlabel{eq:actc_modified_reference_acceleration}{{{76}}{66}{تطبيق التحكم التكيفي المعتمد على العزم المحسوب \LR {ACTC}}{equation.4.76}{}}
+\newlabel{eq:actc_s_derivative_1}{{{77}}{66}{تطبيق التحكم التكيفي المعتمد على العزم المحسوب \LR {ACTC}}{equation.4.77}{}}
+\newlabel{eq:actc_acceleration_error}{{{78}}{66}{تطبيق التحكم التكيفي المعتمد على العزم المحسوب \LR {ACTC}}{equation.4.78}{}}
+\newlabel{eq:actc_s_derivative_2}{{{79}}{66}{تطبيق التحكم التكيفي المعتمد على العزم المحسوب \LR {ACTC}}{equation.4.79}{}}
+\newlabel{eq:actc_s_derivative_final}{{{80}}{67}{تطبيق التحكم التكيفي المعتمد على العزم المحسوب \LR {ACTC}}{equation.4.80}{}}
+\newlabel{eq:actc_nominal_computed_torque}{{{81}}{67}{تطبيق التحكم التكيفي المعتمد على العزم المحسوب \LR {ACTC}}{equation.4.81}{}}
+\newlabel{eq:actc_Ks_matrix}{{{82}}{67}{تطبيق التحكم التكيفي المعتمد على العزم المحسوب \LR {ACTC}}{equation.4.82}{}}
+\newlabel{eq:actc_regressor_vector}{{{83}}{67}{تطبيق التحكم التكيفي المعتمد على العزم المحسوب \LR {ACTC}}{equation.4.83}{}}
+\newlabel{eq:actc_adaptive_parameters}{{{84}}{68}{تطبيق التحكم التكيفي المعتمد على العزم المحسوب \LR {ACTC}}{equation.4.84}{}}
+\newlabel{eq:actc_adaptive_torque_single_joint}{{{85}}{68}{تطبيق التحكم التكيفي المعتمد على العزم المحسوب \LR {ACTC}}{equation.4.85}{}}
+\newlabel{eq:actc_adaptive_torque_expanded}{{{86}}{68}{تطبيق التحكم التكيفي المعتمد على العزم المحسوب \LR {ACTC}}{equation.4.86}{}}
+\newlabel{eq:actc_adaptive_torque_vector}{{{87}}{68}{تطبيق التحكم التكيفي المعتمد على العزم المحسوب \LR {ACTC}}{equation.4.87}{}}
+\newlabel{eq:actc_adaptation_law}{{{88}}{69}{تطبيق التحكم التكيفي المعتمد على العزم المحسوب \LR {ACTC}}{equation.4.88}{}}
+\newlabel{eq:actc_gamma_matrix}{{{89}}{69}{تطبيق التحكم التكيفي المعتمد على العزم المحسوب \LR {ACTC}}{equation.4.89}{}}
+\newlabel{eq:actc_nominal_theta}{{{90}}{69}{تطبيق التحكم التكيفي المعتمد على العزم المحسوب \LR {ACTC}}{equation.4.90}{}}
+\newlabel{eq:actc_sigma_modification}{{{91}}{69}{تطبيق التحكم التكيفي المعتمد على العزم المحسوب \LR {ACTC}}{equation.4.91}{}}
+\newlabel{eq:actc_control_torque_vector}{{{92}}{69}{تطبيق التحكم التكيفي المعتمد على العزم المحسوب \LR {ACTC}}{equation.4.92}{}}
+\newlabel{eq:actc_raw_voltage}{{{93}}{70}{تطبيق التحكم التكيفي المعتمد على العزم المحسوب \LR {ACTC}}{equation.4.93}{}}
+\newlabel{eq:actc_voltage_limits}{{{94}}{70}{تطبيق التحكم التكيفي المعتمد على العزم المحسوب \LR {ACTC}}{equation.4.94}{}}
+\newlabel{eq:actc_saturated_voltage}{{{95}}{70}{تطبيق التحكم التكيفي المعتمد على العزم المحسوب \LR {ACTC}}{equation.4.95}{}}
+\newlabel{eq:actc_saturation_function}{{{96}}{70}{تطبيق التحكم التكيفي المعتمد على العزم المحسوب \LR {ACTC}}{equation.4.96}{}}
+\newlabel{eq:actc_closed_loop_acceleration}{{{97}}{70}{تطبيق التحكم التكيفي المعتمد على العزم المحسوب \LR {ACTC}}{equation.4.97}{}}
+\newlabel{eq:actc_state_ddq}{{{98}}{70}{تطبيق التحكم التكيفي المعتمد على العزم المحسوب \LR {ACTC}}{equation.4.98}{}}
+\newlabel{eq:actc_state_reference_model}{{{99}}{70}{تطبيق التحكم التكيفي المعتمد على العزم المحسوب \LR {ACTC}}{equation.4.99}{}}
+\newlabel{eq:actc_state_theta_dot}{{{100}}{71}{تطبيق التحكم التكيفي المعتمد على العزم المحسوب \LR {ACTC}}{equation.4.100}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces \xpg@aux {numerals=maghrib}{arabic}\ignorespaces \centering  {استجابة مواضع وسرعات مفاصل الذراع باستخدام خوارزمية التحكم التكيفي المعتمد على العزم المحسوب \pLRE {ACTC}}}}{71}{figure.caption.21}\protected@file@percent }
+\newlabel{fig:adaptive_response}{{4.2}{71}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces \centering {استجابة مواضع وسرعات مفاصل الذراع باستخدام خوارزمية التحكم التكيفي المعتمد على العزم المحسوب \LR {ACTC}}}{figure.caption.21}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.3}تطبيق التحكم الانزلاقي \pLRE {SMC}}{72}{subsection.4.3.3}\protected@file@percent }
+\newlabel{subsec:sliding_mode_control}{{4.3.3}{72}{تطبيق التحكم الانزلاقي \LR {SMC}}{subsection.4.3.3}{}}
+\newlabel{eq:smc_dynamic_model_voltage}{{{101}}{72}{تطبيق التحكم الانزلاقي \LR {SMC}}{equation.4.101}{}}
+\newlabel{eq:smc_effective_inertia}{{{102}}{72}{تطبيق التحكم الانزلاقي \LR {SMC}}{equation.4.102}{}}
+\newlabel{eq:smc_torque_voltage_relation}{{{103}}{72}{تطبيق التحكم الانزلاقي \LR {SMC}}{equation.4.103}{}}
+\newlabel{eq:smc_mechanical_model}{{{104}}{72}{تطبيق التحكم الانزلاقي \LR {SMC}}{equation.4.104}{}}
+\newlabel{eq:smc_reference_choice}{{{105}}{72}{تطبيق التحكم الانزلاقي \LR {SMC}}{equation.4.105}{}}
+\newlabel{eq:smc_position_error}{{{106}}{72}{تطبيق التحكم الانزلاقي \LR {SMC}}{equation.4.106}{}}
+\newlabel{eq:smc_velocity_error}{{{107}}{73}{تطبيق التحكم الانزلاقي \LR {SMC}}{equation.4.107}{}}
+\newlabel{eq:smc_sliding_surface}{{{108}}{73}{تطبيق التحكم الانزلاقي \LR {SMC}}{equation.4.108}{}}
+\newlabel{eq:smc_lambda_matrix}{{{109}}{73}{تطبيق التحكم الانزلاقي \LR {SMC}}{equation.4.109}{}}
+\newlabel{eq:smc_error_dynamics}{{{110}}{73}{تطبيق التحكم الانزلاقي \LR {SMC}}{equation.4.110}{}}
+\newlabel{eq:smc_error_convergence}{{{111}}{73}{تطبيق التحكم الانزلاقي \LR {SMC}}{equation.4.111}{}}
+\newlabel{eq:smc_tracking_goal}{{{112}}{73}{تطبيق التحكم الانزلاقي \LR {SMC}}{equation.4.112}{}}
+\newlabel{eq:smc_modified_reference_acceleration}{{{113}}{73}{تطبيق التحكم الانزلاقي \LR {SMC}}{equation.4.113}{}}
+\newlabel{eq:smc_s_derivative_1}{{{114}}{74}{تطبيق التحكم الانزلاقي \LR {SMC}}{equation.4.114}{}}
+\newlabel{eq:smc_acceleration_error}{{{115}}{74}{تطبيق التحكم الانزلاقي \LR {SMC}}{equation.4.115}{}}
+\newlabel{eq:smc_s_derivative_2}{{{116}}{74}{تطبيق التحكم الانزلاقي \LR {SMC}}{equation.4.116}{}}
+\newlabel{eq:smc_s_derivative_final}{{{117}}{74}{تطبيق التحكم الانزلاقي \LR {SMC}}{equation.4.117}{}}
+\newlabel{eq:smc_control_law}{{{118}}{74}{تطبيق التحكم الانزلاقي \LR {SMC}}{equation.4.118}{}}
+\newlabel{eq:smc_Ks_matrix}{{{119}}{74}{تطبيق التحكم الانزلاقي \LR {SMC}}{equation.4.119}{}}
+\newlabel{eq:smc_Kr_matrix}{{{120}}{74}{تطبيق التحكم الانزلاقي \LR {SMC}}{equation.4.120}{}}
+\newlabel{eq:smc_robust_term}{{{121}}{75}{تطبيق التحكم الانزلاقي \LR {SMC}}{equation.4.121}{}}
+\newlabel{eq:smc_saturation_function}{{{122}}{75}{تطبيق التحكم الانزلاقي \LR {SMC}}{equation.4.122}{}}
+\newlabel{eq:smc_raw_voltage}{{{123}}{75}{تطبيق التحكم الانزلاقي \LR {SMC}}{equation.4.123}{}}
+\newlabel{eq:smc_voltage_limits}{{{124}}{75}{تطبيق التحكم الانزلاقي \LR {SMC}}{equation.4.124}{}}
+\newlabel{eq:smc_saturated_voltage}{{{125}}{75}{تطبيق التحكم الانزلاقي \LR {SMC}}{equation.4.125}{}}
+\newlabel{eq:smc_closed_loop_acceleration}{{{126}}{75}{تطبيق التحكم الانزلاقي \LR {SMC}}{equation.4.126}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces \xpg@aux {numerals=maghrib}{arabic}\ignorespaces \centering  {استجابة مواضع وسرعات مفاصل الذراع باستخدام خوارزمية التحكم الانزلاقي \pLRE {SMC}}}}{76}{figure.caption.22}\protected@file@percent }
+\newlabel{fig:sliding_mode_response}{{4.3}{76}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces \centering {استجابة مواضع وسرعات مفاصل الذراع باستخدام خوارزمية التحكم الانزلاقي \LR {SMC}}}{figure.caption.22}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.4}تحليل ومقارنة أداء خوارزميات التحكم}{76}{subsection.4.3.4}\protected@file@percent }
+\newlabel{subsec:controllers_comparison}{{4.3.4}{76}{تحليل ومقارنة أداء خوارزميات التحكم}{subsection.4.3.4}{}}
+\gdef \LT@i {\LT@entry 
+    {1}{103.84871pt}\LT@entry 
+    {1}{114.83008pt}\LT@entry 
+    {1}{114.83008pt}\LT@entry 
+    {1}{114.83008pt}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces \xpg@aux {numerals=maghrib}{arabic}\ignorespaces \centering  {مقارنة استجابات مواضع وسرعات المفاصل باستخدام خوارزميات \pLRE {PID} و \pLRE {ACTC} و \pLRE {SMC}}}}{77}{figure.caption.23}\protected@file@percent }
+\newlabel{fig:comparison_actc_pid_smc}{{4.4}{77}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces \centering {مقارنة استجابات مواضع وسرعات المفاصل باستخدام خوارزميات \LR {PID} و \LR {ACTC} و \LR {SMC}}}{figure.caption.23}{}}
+\newlabel{tab:controllers_comparison}{{4.1}{77}{مقارنة أداء خوارزميات التحكم المطبقة}{table.4.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces مقارنة أداء خوارزميات التحكم المطبقة}}{77}{table.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.4}التحكم عالي المستوى \pLRE {High-Level Control (HLC)}}{78}{section.4.4}\protected@file@percent }
+\newlabel{sec:high_level_control}{{4.4}{78}{التحكم عالي المستوى \LR {High-Level Control (HLC)}}{section.4.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.1}المخطط العام للتحكم عالي المستوى}{79}{subsection.4.4.1}\protected@file@percent }
+\newlabel{subsec:general_hlc_diagram}{{4.4.1}{79}{المخطط العام للتحكم عالي المستوى}{subsection.4.4.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.5}{\ignorespaces \xpg@aux {numerals=maghrib}{arabic}\ignorespaces \centering  {المخطط العام لطبقة التحكم عالي المستوى \pLRE {HLC}}}}{79}{figure.caption.24}\protected@file@percent }
+\newlabel{fig:general_hlc_block_diagram}{{4.5}{79}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces \centering {المخطط العام لطبقة التحكم عالي المستوى \LR {HLC}}}{figure.caption.24}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.2}بناء نموذج التحكم عالي المستوى في بيئة \pLRE {MATLAB/Simulink}}{79}{subsection.4.4.2}\protected@file@percent }
+\newlabel{subsec:hlc_simulink_model}{{4.4.2}{79}{بناء نموذج التحكم عالي المستوى في بيئة \LR {MATLAB/Simulink}}{subsection.4.4.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.6}{\ignorespaces \xpg@aux {numerals=maghrib}{arabic}\ignorespaces \centering  {نموذج التحكم عالي المستوى في بيئة \pLRE {Simulink}}}}{81}{figure.caption.25}\protected@file@percent }
+\newlabel{fig:hlc_simulink_model}{{4.6}{81}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces \centering {نموذج التحكم عالي المستوى في بيئة \LR {Simulink}}}{figure.caption.25}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.3}نتائج تتبع موضع النهاية المنفذة}{81}{subsection.4.4.3}\protected@file@percent }
+\newlabel{subsec:hlc_results}{{4.4.3}{81}{نتائج تتبع موضع النهاية المنفذة}{subsection.4.4.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.7}{\ignorespaces \xpg@aux {numerals=maghrib}{arabic}\ignorespaces \centering  {استجابة موضع النهاية المنفذة باستخدام طبقة التحكم عالي المستوى \pLRE {HLC}}}}{81}{figure.caption.26}\protected@file@percent }
+\newlabel{fig:hlc_response}{{4.7}{81}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces \centering {استجابة موضع النهاية المنفذة باستخدام طبقة التحكم عالي المستوى \LR {HLC}}}{figure.caption.26}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.5}خلاصة الفصل }{82}{section.4.5}\protected@file@percent }
+\@setckpt{chapter/controll}{
+\setcounter{page}{84}
+\setcounter{equation}{126}
+\setcounter{enumi}{3}
+\setcounter{enumii}{0}
+\setcounter{enumiii}{0}
+\setcounter{enumiv}{0}
+\setcounter{footnote}{0}
+\setcounter{mpfootnote}{0}
+\setcounter{part}{0}
+\setcounter{chapter}{4}
+\setcounter{section}{5}
+\setcounter{subsection}{0}
+\setcounter{subsubsection}{0}
+\setcounter{paragraph}{0}
+\setcounter{subparagraph}{0}
+\setcounter{figure}{7}
+\setcounter{table}{1}
+\setcounter{footdir@label}{0}
+\setcounter{tmpA}{0}
+\setcounter{tmpB}{0}
+\setcounter{tmpC}{0}
+\setcounter{tmpD}{0}
+\setcounter{tmpE}{0}
+\setcounter{tmpF}{0}
+\setcounter{Hijriday}{0}
+\setcounter{Hijrimonth}{0}
+\setcounter{Hijriyear}{0}
+\setcounter{caption@flags}{2}
+\setcounter{continuedfloat}{0}
+\setcounter{section@level}{0}
+\setcounter{Item}{7}
+\setcounter{Hfootnote}{0}
+\setcounter{Hy@AnnotLevel}{0}
+\setcounter{bookmark@seq@number}{59}
+\setcounter{float@type}{8}
+\setcounter{parentequation}{0}
+\setcounter{LT@tables}{1}
+\setcounter{LT@chunks}{3}
+\setcounter{lstnumber}{1}
+\setcounter{lofdepth}{1}
+\setcounter{lotdepth}{1}
+\setcounter{lstlisting}{0}
+}

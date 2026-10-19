@@ -1,0 +1,955 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<SimscapeMultibodyImportXML version="2.0" xmlns="urn:mathworks:SimscapeMultibody:import" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<Created by="" on="12/31/25||17:03:54" using="Simscape Multibody Link Version 6.1" from="SolidWorks 30.2.0"/>
+<ModelUnits mass="kilogram" length="millimeter"/>
+<DataUnits mass="kilogram" length="meter"/>
+<RootAssembly name="Assem1" uid="Assem1" version="29156">
+<AssemblyFile name="Assem1.SLDASM" type="SolidWorks Assembly"/>
+<InstanceTree>
+<Instance name="Robot - Base.step-1" uid="Robot - Base.step-1" grounded="true" entityUid="Robot - Base.step*:*Default">
+<Transform>
+<Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+<Translation>0.058903829574689898 0.035626792544632364 0.090237580185238836</Translation>
+</Transform>
+</Instance>
+<Instance name="Robot - J1.stp.step-1" uid="Robot - J1.stp.step-1" entityUid="Robot - J1.stp.step*:*Default">
+<Transform>
+<Rotation>-0.99990439101749784 0 -0.013827827881749811 0 1 0 0.013827827881749811 0 -0.99990439101749784</Rotation>
+<Translation>0.058903829574689891 0.095626792544632369 0.090237580185238836</Translation>
+</Transform>
+</Instance>
+<Instance name="Robot - J2 (LEFT).stp.step-1" uid="Robot - J2 (LEFT).stp.step-1" entityUid="Robot - J2 (LEFT).stp.step*:*Default">
+<Transform>
+<Rotation>-0.99990439101749762 -0.00044499685750982906 -0.013820665748222957 0 0.99948204927136219 -0.032181255170031592 0.013827827881749792 -0.032178178352969135 -0.99938648980960187</Rotation>
+<Translation>0.056163259740151052 0.14568119254463235 0.072859014766251687</Translation>
+</Transform>
+</Instance>
+<Instance name="Robot - J3 (TOP).stp.step-1" uid="Robot - J3 (TOP).stp.step-1" entityUid="Robot - J3 (TOP).stp.step*:*Default">
+<Transform>
+<Rotation>-0.99990439101749762 -0.00062947705125478354 -0.013813492772258754 0 0.99896331443999886 -0.045522482391143655 0.013827827881749946 -0.045518130032921253 -0.99886780457394808</Rotation>
+<Translation>0.058716480265617342 0.30728989956903513 0.047039805241562239</Translation>
+</Transform>
+</Instance>
+<Instance name="Robot - J2 (RIGHT).stp.step-1" uid="Robot - J2 (RIGHT).stp.step-1" entityUid="Robot - J2 (RIGHT).stp.step*:*Default">
+<Transform>
+<Rotation>-0.99990439101749762 -0.00044499685750984722 -0.01382066574822273 0 0.99948204927136219 -0.032181255170031849 0.013827827881749567 -0.032178178352969392 -0.99938648980960187</Rotation>
+<Translation>0.056163259740152134 0.14568119254463241 0.072859014766252589</Translation>
+</Transform>
+</Instance>
+<Instance name="Robot - J4 (ARM).stp.step-1" uid="Robot - J4 (ARM).stp.step-1" entityUid="Robot - J4 (ARM).stp.step*:*Default">
+<Transform>
+<Rotation>-0.9998869793417251 -0.0059343036921993995 -0.013813492772258648 -0.0052998427660591908 0.99894925559990444 -0.045522482391143745 0.014069122557414285 -0.045444128070474536 -0.99886780457394819</Rotation>
+<Translation>0.058716480265627188 0.30728989956903324 0.04703980524156226</Translation>
+</Transform>
+</Instance>
+<Instance name="Robot - J8 cap.step-1" uid="Robot - J8 cap.step-1" entityUid="Robot - J8 cap.step*:*Default">
+<Transform>
+<Rotation>0.50486801506742429 0.86308633786539235 -0.013793503977771494 0.86179631548181856 -0.50489449204545167 -0.048873945248231569 -0.049146698605713739 0.012787700820361361 -0.99870970593255382</Rotation>
+<Translation>0.054982424355881958 0.29669505352059056 -0.17968257132780208</Translation>
+</Transform>
+</Instance>
+<Instance name="Robot - J9 hanger-3" uid="Robot - J9 hanger-3" entityUid="Robot - J9 hanger*:*Default">
+<Transform>
+<Rotation>-0.50486801506739809 0.85655945882711992 0.10683716982257034 -0.86179631548183389 -0.50722031108552712 -0.0058878386727444533 0.049146698605714065 -0.095044460733343675 0.99425909726794393</Rotation>
+<Translation>0.098035853970185091 0.27620592726176779 -0.18825189496555833</Translation>
+</Transform>
+</Instance>
+<Instance name="Robot - J9 hanger-2" uid="Robot - J9 hanger-2" entityUid="Robot - J9 hanger*:*Default">
+<Transform>
+<Rotation>-0.49502068671700467 -0.86518817385679492 -0.080024643332971268 0.8681496140831062 -0.49628031665719424 -0.0047005176298844419 -0.035647823069284587 -0.071800216691728008 0.99678180239882086</Rotation>
+<Translation>0.015911702119445266 0.26894270635025147 -0.18676221075844923</Translation>
+</Transform>
+</Instance>
+<Instance name="Robot - J7 thread.step-1" uid="Robot - J7 thread.step-1" entityUid="Robot - J7 thread.step*:*Default">
+<Transform>
+<Rotation>0.24894325241075457 0.96841984507091261 -0.013793503977771144 0.96718649297888237 -0.24932233208255364 -0.048873945248231992 -0.050769527064624988 -0.0011740518499107223 -0.99870970593255393</Rotation>
+<Translation>0.0554514034911293 0.29835676765903002 -0.14572644132609522</Translation>
+</Transform>
+</Instance>
+<Instance name="Robot - J9 hanger-1" uid="Robot - J9 hanger-1" entityUid="Robot - J9 hanger*:*Default">
+<Transform>
+<Rotation>0.99988870178442124 0.0041638932371187935 0.014326410470695416 -0.0063532986012738487 0.98768061158264886 0.15635422955778319 -0.013498875536429936 -0.15642784757463993 0.98759713895009704</Rotation>
+<Translation>0.050628707854271315 0.34362194585188222 -0.19089628314689616</Translation>
+</Transform>
+<VisualProperties>
+<Ambient r="0.96078431372549022" g="0.80392156862745101" b="0" a="1"/>
+<Diffuse r="0.96078431372549022" g="0.80392156862745101" b="0" a="1"/>
+<Specular r="0.28823529411764703" g="0.2411764705882353" b="0" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Instance>
+<Instance name="Robot - J5 controler.step-1" uid="Robot - J5 controler.step-1" entityUid="Robot - J5 controler.step*:*Default">
+<Transform>
+<Rotation>-0.9998869793417251 -0.0059806179359413484 -0.013793503977771619 -0.0052998427660590399 0.99879089360212314 -0.048873945248231937 0.014069122557414751 -0.048795318080492298 -0.99870970593255359</Rotation>
+<Translation>0.055520371011028018 0.29860113738526928 -0.14073289279643253</Translation>
+</Transform>
+</Instance>
+<Instance name="Robot - J6 hand.step-1" uid="Robot - J6 hand.step-1" entityUid="Robot - J6 hand.step*:*Default">
+<Transform>
+<Rotation>-0.99988870178442113 0.0056853576738997305 -0.013793503977771716 0.0063532986012738478 0.99878474811780926 -0.048873945248232256 0.013498875536429934 -0.04895613991486647 -0.9987097059325537</Rotation>
+<Translation>0.055434047582767168 0.29829527119544885 -0.14698308461009973</Translation>
+</Transform>
+</Instance>
+<Instance name="Robot - J10 finger.step-2" uid="Robot - J10 finger.step-2" entityUid="Robot - J10 finger.step*:*Default">
+<Transform>
+<Rotation>-0.49502068671700461 -0.70846053503060213 0.50302901509393882 0.86814961408310609 -0.37953339954322135 0.31979782081577635 -0.035647823069284587 0.59501098219723525 0.80292662415385285</Rotation>
+<Translation>0.039290419003799891 0.28516872843839131 -0.1863788401599053</Translation>
+</Transform>
+</Instance>
+<Instance name="Robot - J4 (J6 JOINT).stp.step-1" uid="Robot - J4 (J6 JOINT).stp.step-1" entityUid="Robot - J4 (J6 JOINT).stp.step*:*Default">
+<Transform>
+<Rotation>-0.9998869793417251 -0.0059343036921991462 -0.013813492772259229 -0.0052998427660589159 0.99894925559990444 -0.045522482391143509 0.014069122557414852 -0.0454441280704743 -0.99886780457394819</Rotation>
+<Translation>0.058716480265627286 0.30728989956903324 0.04703980524156226</Translation>
+</Transform>
+</Instance>
+<Instance name="Robot - J10 finger.step-1" uid="Robot - J10 finger.step-1" entityUid="Robot - J10 finger.step*:*Default">
+<Transform>
+<Rotation>0.99988870178442113 0.012493388419181009 0.0081547096620571847 -0.0063532986012738478 0.85111583217376252 -0.52493949729473288 -0.013498875536429934 0.5248292631599073 0.85110047872755945</Rotation>
+<Translation>0.052988140633866067 0.31540292327963015 -0.188047597308554</Translation>
+</Transform>
+</Instance>
+<Instance name="Robot - J10 finger.step-3" uid="Robot - J10 finger.step-3" entityUid="Robot - J10 finger.step*:*Default">
+<Transform>
+<Rotation>-0.50486801506739953 0.71938528021348691 -0.47706719230530498 -0.86179631548183289 -0.38860594012162275 0.32602535779311209 0.049146698605714356 0.57573452381662205 0.8161582935324535</Rotation>
+<Translation>0.072359708040861906 0.28841862298344784 -0.1869946112236078</Translation>
+</Transform>
+</Instance>
+</InstanceTree>
+<Constraints>
+<Concentric name="Concentric1">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Robot - Base.step-1</Uid>
+</InstancePath>
+<Position>0 0.059999999999999991 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Robot - J1.stp.step-1</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident1">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Robot - Base.step-1</Uid>
+</InstancePath>
+<Position>0 0.05000000000000001 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Robot - J1.stp.step-1</Uid>
+</InstancePath>
+<Position>0 -0.009999999999999995 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric2">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Robot - J1.stp.step-1</Uid>
+</InstancePath>
+<Position>-0.025000000000000036 0.050054399999999985 0.017414800000000008</Position>
+<Axis>-1.0000000000000002 0 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Robot - J2 (LEFT).stp.step-1</Uid>
+</InstancePath>
+<Position>-0.022500000000000027 0 0</Position>
+<Axis>-1 0 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident5">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Robot - J2 (LEFT).stp.step-1</Uid>
+</InstancePath>
+<Position>-0.010500000000000002 0.14218678552869102 0</Position>
+<Axis>1 -4.576959471147557e-16 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Robot - J2 (RIGHT).stp.step-1</Uid>
+</InstancePath>
+<Position>-0.010500000000000002 0.054384456319245433 -0.065321201158822118</Position>
+<Axis>-1 4.576959471147557e-16 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric5">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Robot - J2 (LEFT).stp.step-1</Uid>
+</InstancePath>
+<Position>-0.022499999999999999 0.059296696382172803 0</Position>
+<Axis>1 0 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Robot - J2 (RIGHT).stp.step-1</Uid>
+</InstancePath>
+<Position>0.022499999999999999 0.059296696382172803 0</Position>
+<Axis>-1 0 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric6">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Robot - J2 (LEFT).stp.step-1</Uid>
+</InstancePath>
+<Position>-0.032500000000000022 0 0</Position>
+<Axis>1 0 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Robot - J2 (RIGHT).stp.step-1</Uid>
+</InstancePath>
+<Position>0.010500000000000009 0 0</Position>
+<Axis>1 1.1221492485224971e-16 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric7">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Robot - J2 (LEFT).stp.step-1</Uid>
+</InstancePath>
+<Position>-0.010500000000000002 0.12 0</Position>
+<Axis>-1 5.3852321907355005e-16 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Robot - J3 (TOP).stp.step-1</Uid>
+</InstancePath>
+<Position>0 -0.042625500000000094 -0.019999999999999983</Position>
+<Axis>1 0 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric8">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Robot - J3 (TOP).stp.step-1</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 0 1.0000000000000002</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Robot - J4 (ARM).stp.step-1</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 0 1.0000000000000002</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident6">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Robot - J3 (TOP).stp.step-1</Uid>
+</InstancePath>
+<Position>0.0050000000000000044 0 0</Position>
+<Axis>0 0 1.0000000000000002</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Robot - J4 (ARM).stp.step-1</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 0 -1.0000000000000002</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric9">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Robot - J4 (ARM).stp.step-1</Uid>
+</InstancePath>
+<Position>0 0.014000000000000012 0.09600000000000003</Position>
+<Axis>1 0 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Robot - J4 (J6 JOINT).stp.step-1</Uid>
+</InstancePath>
+<Position>0 0.013999999999999957 0.09600000000000003</Position>
+<Axis>1 0 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident7">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Robot - J4 (ARM).stp.step-1</Uid>
+</InstancePath>
+<Position>0 0 0.19803454156256009</Position>
+<Axis>1 0 -4.3541559247017858e-16</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Robot - J4 (J6 JOINT).stp.step-1</Uid>
+</InstancePath>
+<Position>0 -1.1102230246251565e-16 0.19562723220913308</Position>
+<Axis>-1 0 1.3183898417423734e-16</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric10">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Robot - J4 (ARM).stp.step-1</Uid>
+</InstancePath>
+<Position>0 -0.014000000000000012 0.09600000000000003</Position>
+<Axis>1 0 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Robot - J4 (J6 JOINT).stp.step-1</Uid>
+</InstancePath>
+<Position>0 -0.014000000000000068 0.09600000000000003</Position>
+<Axis>1 0 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric11">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Robot - J4 (J6 JOINT).stp.step-1</Uid>
+</InstancePath>
+<Position>0.025999999999999995 0 0.15000000000000005</Position>
+<Axis>-1 0 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Robot - J5 controler.step-1</Uid>
+</InstancePath>
+<Position>0.025000000000000008 0 -0.037999999999999992</Position>
+<Axis>-1 0 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric12">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Robot - J5 controler.step-1</Uid>
+</InstancePath>
+<Position>0 0 0.047999999999999959</Position>
+<Axis>0 0 -0.99999999999999989</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Robot - J7 thread.step-1</Uid>
+</InstancePath>
+<Position>0 0 0.04300000000000001</Position>
+<Axis>0 0 -1.0000000000000002</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Distance name="Distance1">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Robot - J7 thread.step-1</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 0 -1.0000000000000002</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Robot - J5 controler.step-1</Uid>
+</InstancePath>
+<Position>0.0067656706236928696 -0.023359787929649656 0.0040000000000000036</Position>
+<Axis>0 0 0.99999999999999989</Axis>
+</ConstraintGeometry>
+</Distance>
+<Concentric name="Concentric13">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Robot - J5 controler.step-1</Uid>
+</InstancePath>
+<Position>0 0 0.047999999999999959</Position>
+<Axis>0 0 -0.99999999999999989</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Robot - J6 hand.step-1</Uid>
+</InstancePath>
+<Position>0 0 0.010000000000000009</Position>
+<Axis>0 0 -1.0000000000000002</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Distance name="LimitDistance1">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Robot - J6 hand.step-1</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 0 -1.0000000000000002</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Robot - J5 controler.step-1</Uid>
+</InstancePath>
+<Position>0.0067656706236928696 -0.023359787929649656 0.0040000000000000036</Position>
+<Axis>0 0 0.99999999999999989</Axis>
+</ConstraintGeometry>
+</Distance>
+<Concentric name="Concentric14">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Robot - J5 controler.step-1</Uid>
+</InstancePath>
+<Position>0 0 0.047999999999999959</Position>
+<Axis>0 0 -0.99999999999999989</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Robot - J8 cap.step-1</Uid>
+</InstancePath>
+<Position>0 0 0.0099999999999999811</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident8">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Robot - J5 controler.step-1</Uid>
+</InstancePath>
+<Position>0 0 0.047999999999999959</Position>
+<Axis>0 0 0.99999999999999989</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Robot - J8 cap.step-1</Uid>
+</InstancePath>
+<Position>0 0 0.009000000000000008</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric15">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Robot - J8 cap.step-1</Uid>
+</InstancePath>
+<Position>0.019926636575375689 -0.0036526853298581574 0.0074674133954191202</Position>
+<Axis>-0.50000000000000078 -0.86602540378443826 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Robot - J10 finger.step-1</Uid>
+</InstancePath>
+<Position>0.0039999999999999966 0 0</Position>
+<Axis>-1 0 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric20">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Robot - J6 hand.step-1</Uid>
+</InstancePath>
+<Position>-0.046150151552001299 0.048634904305000781 0.030274662416140491</Position>
+<Axis>1 0 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Robot - J9 hanger-1</Uid>
+</InstancePath>
+<Position>0.0020000000000000018 0 0.011499999999999969</Position>
+<Axis>-1.0000000000000002 0 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric21">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Robot - J10 finger.step-1</Uid>
+</InstancePath>
+<Position>0.0039999999999999966 0.015000000000000013 -0.025980762113533118</Position>
+<Axis>-1 0 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Robot - J9 hanger-1</Uid>
+</InstancePath>
+<Position>0.009000000000000008 0 -0.011500000000000038</Position>
+<Axis>-1.0000000000000002 0 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Distance name="LimitDistance7">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Robot - J4 (J6 JOINT).stp.step-1</Uid>
+</InstancePath>
+<Position>0.025999999999999995 0 0.15000000000000005</Position>
+<Axis>-1 0 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Robot - J5 controler.step-1</Uid>
+</InstancePath>
+<Position>0.025000000000000008 0 -0.037999999999999992</Position>
+<Axis>1 0 0</Axis>
+</ConstraintGeometry>
+</Distance>
+<Distance name="Distance5">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Robot - J9 hanger-1</Uid>
+</InstancePath>
+<Position>0.0020000000000000018 0 0.011499999999999969</Position>
+<Axis>1.0000000000000002 0 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Robot - J6 hand.step-1</Uid>
+</InstancePath>
+<Position>0.0020000000000000018 0 0</Position>
+<Axis>1 0 0</Axis>
+</ConstraintGeometry>
+</Distance>
+<Distance name="LimitDistance6">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Robot - J2 (LEFT).stp.step-1</Uid>
+</InstancePath>
+<Position>-0.010500000000000002 0.14218678552869102 0</Position>
+<Axis>1 -4.576959471147557e-16 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Robot - J3 (TOP).stp.step-1</Uid>
+</InstancePath>
+<Position>-0.0074999999999999928 -0.035831536603620651 -0.017376175606566409</Position>
+<Axis>-1 0 0</Axis>
+</ConstraintGeometry>
+</Distance>
+<Distance name="LimitDistance5">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Robot - J1.stp.step-1</Uid>
+</InstancePath>
+<Position>-0.025000000000000022 0.11999999999999998 -0.045000000000000026</Position>
+<Axis>1.0000000000000002 1.0449157878825e-16 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Robot - J2 (LEFT).stp.step-1</Uid>
+</InstancePath>
+<Position>-0.022499999999999999 0.056500000000000022 0</Position>
+<Axis>-1 0 0</Axis>
+</ConstraintGeometry>
+</Distance>
+<Distance name="Distance9">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Robot - J9 hanger-1</Uid>
+</InstancePath>
+<Position>0.0020000000000000018 0 0.011499999999999969</Position>
+<Axis>1.0000000000000002 0 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Robot - J10 finger.step-1</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>-1 0 0</Axis>
+</ConstraintGeometry>
+</Distance>
+<Concentric name="Concentric22">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Robot - J6 hand.step-1</Uid>
+</InstancePath>
+<Position>-0.018543986862755747 -0.065150681188819809 0.030274662416140463</Position>
+<Axis>-0.49999999999999112 0.86602540378444404 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Robot - J9 hanger-3</Uid>
+</InstancePath>
+<Position>0.0020000000000000018 0 0.01150000000000001</Position>
+<Axis>-1 1.4918621893400541e-16 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric23">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Robot - J10 finger.step-3</Uid>
+</InstancePath>
+<Position>0.0040000000000000036 0.014999999999999986 -0.025980762113533146</Position>
+<Axis>-0.99999999999999989 -1.5959455978986625e-16 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Robot - J9 hanger-3</Uid>
+</InstancePath>
+<Position>0.0020000000000000018 0 -0.01150000000000001</Position>
+<Axis>-1 1.4918621893400541e-16 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric24">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Robot - J8 cap.step-1</Uid>
+</InstancePath>
+<Position>-0.0067999999999999727 0.019083316151184498 0.0074674133954191202</Position>
+<Axis>1.0000000000000002 0 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Robot - J10 finger.step-3</Uid>
+</InstancePath>
+<Position>0.0040000000000000036 0 0</Position>
+<Axis>-0.99999999999999989 -1.5959455978986625e-16 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric25">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Robot - J6 hand.step-1</Uid>
+</InstancePath>
+<Position>0.076231676302757179 0.034767327892517519 0.030274662416140491</Position>
+<Axis>-0.50000000000000056 -0.86602540378443837 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Robot - J9 hanger-2</Uid>
+</InstancePath>
+<Position>0.0020000000000000295 0 0.01150000000000001</Position>
+<Axis>-1 0 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric29">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Robot - J10 finger.step-2</Uid>
+</InstancePath>
+<Position>0.0040000000000000036 0.015000000000000013 -0.025980762113533132</Position>
+<Axis>-1 0 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Robot - J9 hanger-2</Uid>
+</InstancePath>
+<Position>0.0020000000000000295 0 -0.011499999999999982</Position>
+<Axis>-1 0 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric30">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Robot - J8 cap.step-1</Uid>
+</InstancePath>
+<Position>-0.013126636575375772 -0.015430630821326313 0.0074674133954191202</Position>
+<Axis>-0.49999999999999212 0.86602540378444326 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Robot - J10 finger.step-2</Uid>
+</InstancePath>
+<Position>0.0040000000000000036 0 0</Position>
+<Axis>-1 0 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Distance name="Distance10">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Robot - J6 hand.step-1</Uid>
+</InstancePath>
+<Position>-0.00099999999999999395 0.0017320508075688856 0</Position>
+<Axis>-0.50000000000000122 0.86602540378443782 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Robot - J9 hanger-3</Uid>
+</InstancePath>
+<Position>0.0020000000000000018 0 0.01150000000000001</Position>
+<Axis>1 -1.4918621893400541e-16 0</Axis>
+</ConstraintGeometry>
+</Distance>
+<Distance name="Distance11">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Robot - J9 hanger-3</Uid>
+</InstancePath>
+<Position>0.0070000000000000062 0 0.011499999999999982</Position>
+<Axis>-1 1.4918621893400541e-16 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Robot - J10 finger.step-3</Uid>
+</InstancePath>
+<Position>0.0040000000000000036 0 0</Position>
+<Axis>0.99999999999999989 1.5959455978986625e-16 0</Axis>
+</ConstraintGeometry>
+</Distance>
+<Distance name="Distance14">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Robot - J10 finger.step-2</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>-1 0 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Robot - J9 hanger-2</Uid>
+</InstancePath>
+<Position>0.0020000000000000295 0 0.01150000000000001</Position>
+<Axis>1 0 0</Axis>
+</ConstraintGeometry>
+</Distance>
+<Distance name="Distance15">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Robot - J6 hand.step-1</Uid>
+</InstancePath>
+<Position>-0.00099999999999998007 -0.0017320508075688856 0</Position>
+<Axis>-0.49999999999999217 -0.86602540378444315 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Robot - J9 hanger-2</Uid>
+</InstancePath>
+<Position>0.0020000000000000295 0 0.01150000000000001</Position>
+<Axis>1 0 0</Axis>
+</ConstraintGeometry>
+</Distance>
+<Distance name="LimitDistance4">
+<ConstraintGeometry geomType="line">
+<InstancePath>
+<Uid>Robot - J6 hand.step-1</Uid>
+</InstancePath>
+<Position>0.0085204643416866774 -0.0028985664391291688 0</Position>
+<Axis>0.8660254037844396 -0.49999999999999811 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="line">
+<InstancePath>
+<Uid>Robot - J5 controler.step-1</Uid>
+</InstancePath>
+<Position>0.01212429773064376 -0.0046905654817629427 0.037132217094442171</Position>
+<Axis>0 0 -0.99999999999999989</Axis>
+</ConstraintGeometry>
+</Distance>
+</Constraints>
+</RootAssembly>
+<Assemblies>
+</Assemblies>
+<Parts>
+<Part name="Robot - Base.step" uid="Robot - Base.step*:*Default" version="116">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="Robot - Base.step.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.25615684910718395</Mass>
+<CenterOfMass>-5.2644141263988241e-08 0.028743100300757603 0.00062099010209169358</CenterOfMass>
+<Inertia>0.00037145641563877653 0.0005872715055645285 0.00037738177831891386 -2.0842094892834171e-06 8.2728951867017983e-11 -4.7508000783491226e-10</Inertia>
+</MassProperties>
+<GeometryFile name="Robot - Base.step_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.29803921568627451" g="0.29803921568627451" b="0.29803921568627451" a="1"/>
+<Diffuse r="0.29803921568627451" g="0.29803921568627451" b="0.29803921568627451" a="1"/>
+<Specular r="0.089411764705882343" g="0.089411764705882343" b="0.089411764705882343" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+<Part name="Robot - J1.stp.step" uid="Robot - J1.stp.step*:*Default" version="116">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="Robot - J1.stp.step.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.2077936609033979</Mass>
+<CenterOfMass>-0.0026403442422122127 0.015731427502643287 -0.0029497460416821886</CenterOfMass>
+<Inertia>0.00016740020487973842 0.00024041680664943184 0.00022949959773670178 -3.6850376360793882e-06 3.3409819081198779e-06 1.3840620553131284e-05</Inertia>
+</MassProperties>
+<GeometryFile name="Robot - J1.stp.step_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.96078431372549022" g="0.80392156862745101" b="0" a="1"/>
+<Diffuse r="0.96078431372549022" g="0.80392156862745101" b="0" a="1"/>
+<Specular r="0.28823529411764703" g="0.2411764705882353" b="0" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+<Part name="Robot - J10 finger.step" uid="Robot - J10 finger.step*:*Default" version="116">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="Robot - J10 finger.step.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.0023074465462316731</Mass>
+<CenterOfMass>0.0019999975909658105 0.0044695611325936838 -0.030306213874732979</CenterOfMass>
+<Inertia>9.1929885825952626e-07 8.1554217161751788e-07 1.0966314696727356e-07 -1.3870353830806516e-07 -7.0269011612012762e-14 -3.7992090088748714e-14</Inertia>
+</MassProperties>
+<GeometryFile name="Robot - J10 finger.step_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.29803921568627451" g="0.29803921568627451" b="0.29803921568627451" a="1"/>
+<Diffuse r="0.29803921568627451" g="0.29803921568627451" b="0.29803921568627451" a="1"/>
+<Specular r="0.089411764705882343" g="0.089411764705882343" b="0.089411764705882343" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+<Part name="Robot - J2 (LEFT).stp.step" uid="Robot - J2 (LEFT).stp.step*:*Default" version="116">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="Robot - J2 (LEFT).stp.step.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.066552028324713505</Mass>
+<CenterOfMass>-0.01757857773507945 0.044152536107749343 -5.6114010959926942e-10</CenterOfMass>
+<Inertia>0.00014799449351863645 8.9129984787743523e-06 0.00014189953100637818 -9.569384239468186e-13 1.8352554734616918e-13 -2.9332874844459623e-06</Inertia>
+</MassProperties>
+<GeometryFile name="Robot - J2 (LEFT).stp.step_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.29803921568627451" g="0.29803921568627451" b="0.29803921568627451" a="1"/>
+<Diffuse r="0.29803921568627451" g="0.29803921568627451" b="0.29803921568627451" a="1"/>
+<Specular r="0.089411764705882343" g="0.089411764705882343" b="0.089411764705882343" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+<Part name="Robot - J2 (RIGHT).stp.step" uid="Robot - J2 (RIGHT).stp.step*:*Default" version="116">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="Robot - J2 (RIGHT).stp.step.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.069326200008800701</Mass>
+<CenterOfMass>0.011457936084141973 0.037946019229717937 -4.9586149600377561e-09</CenterOfMass>
+<Inertia>9.3057186866073532e-05 1.3363468415599388e-05 9.0954447787949268e-05 1.9554636172860035e-10 2.5061255208004604e-11 2.4055469946142464e-06</Inertia>
+</MassProperties>
+<GeometryFile name="Robot - J2 (RIGHT).stp.step_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.29803921568627451" g="0.29803921568627451" b="0.29803921568627451" a="1"/>
+<Diffuse r="0.29803921568627451" g="0.29803921568627451" b="0.29803921568627451" a="1"/>
+<Specular r="0.089411764705882343" g="0.089411764705882343" b="0.089411764705882343" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+<Part name="Robot - J3 (TOP).stp.step" uid="Robot - J3 (TOP).stp.step*:*Default" version="115">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="Robot - J3 (TOP).stp.step.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.071889163333235695</Mass>
+<CenterOfMass>0.0021224520279533149 -0.0054014395849812649 -0.025604007697557749</CenterOfMass>
+<Inertia>5.369293930779785e-05 4.2244479271808815e-05 4.1896061260765212e-05 3.3510814376850251e-06 1.2938643150074713e-06 -1.7873722998131121e-06</Inertia>
+</MassProperties>
+<GeometryFile name="Robot - J3 (TOP).stp.step_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.96078431372549022" g="0.80392156862745101" b="0" a="1"/>
+<Diffuse r="0.96078431372549022" g="0.80392156862745101" b="0" a="1"/>
+<Specular r="0.28823529411764703" g="0.2411764705882353" b="0" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+<Part name="Robot - J4 (ARM).stp.step" uid="Robot - J4 (ARM).stp.step*:*Default" version="115">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="Robot - J4 (ARM).stp.step.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.12900633006949483</Mass>
+<CenterOfMass>-0.0037550870978733534 0.0023879703612610472 0.057368868630354196</CenterOfMass>
+<Inertia>0.00023507911036390144 0.00026400932498967823 4.8693268761851996e-05 6.9977206698786098e-06 3.541670123663396e-05 -1.1568900164367985e-06</Inertia>
+</MassProperties>
+<GeometryFile name="Robot - J4 (ARM).stp.step_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.29803921568627451" g="0.29803921568627451" b="0.29803921568627451" a="1"/>
+<Diffuse r="0.29803921568627451" g="0.29803921568627451" b="0.29803921568627451" a="1"/>
+<Specular r="0.089411764705882343" g="0.089411764705882343" b="0.089411764705882343" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+<Part name="Robot - J4 (J6 JOINT).stp.step" uid="Robot - J4 (J6 JOINT).stp.step*:*Default" version="116">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="Robot - J4 (J6 JOINT).stp.step.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.026365950763482325</Mass>
+<CenterOfMass>0.019510686995110556 -1.0161287693389869e-07 0.1237889382477915</CenterOfMass>
+<Inertia>1.2415662454691965e-05 1.2174868737430873e-05 3.7714165093516763e-06 -7.9153420220195378e-12 -3.482601960054874e-06 3.3010469745222482e-11</Inertia>
+</MassProperties>
+<GeometryFile name="Robot - J4 (J6 JOINT).stp.step_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.29803921568627451" g="0.29803921568627451" b="0.29803921568627451" a="1"/>
+<Diffuse r="0.29803921568627451" g="0.29803921568627451" b="0.29803921568627451" a="1"/>
+<Specular r="0.089411764705882343" g="0.089411764705882343" b="0.089411764705882343" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+<Part name="Robot - J5 controler.step" uid="Robot - J5 controler.step*:*Default" version="116">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="Robot - J5 controler.step.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.050682718506856191</Mass>
+<CenterOfMass>1.6111153109421753e-05 0.00016697630901637428 -0.012883429970418308</CenterOfMass>
+<Inertia>3.6182487556460049e-05 3.92715347649695e-05 1.3681656628663447e-05 1.9089354455355869e-07 2.1468419811471343e-08 1.5821850818937662e-07</Inertia>
+</MassProperties>
+<GeometryFile name="Robot - J5 controler.step_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.96078431372549022" g="0.80392156862745101" b="0" a="1"/>
+<Diffuse r="0.96078431372549022" g="0.80392156862745101" b="0" a="1"/>
+<Specular r="0.28823529411764703" g="0.2411764705882353" b="0" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+<Part name="Robot - J6 hand.step" uid="Robot - J6 hand.step*:*Default" version="116">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="Robot - J6 hand.step.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.0091417304447427294</Mass>
+<CenterOfMass>-2.4770756955330933e-06 2.8895515539229357e-06 0.010388376966666717</CenterOfMass>
+<Inertia>3.4433123345322389e-06 3.4432897427039123e-06 5.5315541844898319e-06 4.0619233002136117e-10 1.6860209286247252e-10 2.1256530927644948e-11</Inertia>
+</MassProperties>
+<GeometryFile name="Robot - J6 hand.step_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.29803921568627451" g="0.29803921568627451" b="0.29803921568627451" a="1"/>
+<Diffuse r="0.29803921568627451" g="0.29803921568627451" b="0.29803921568627451" a="1"/>
+<Specular r="0.089411764705882343" g="0.089411764705882343" b="0.089411764705882343" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+<Part name="Robot - J7 thread.step" uid="Robot - J7 thread.step*:*Default" version="115">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="Robot - J7 thread.step.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.0025704428756404014</Mass>
+<CenterOfMass>-1.7781324662849713e-05 2.5535448708031328e-05 0.021284065946536403</CenterOfMass>
+<Inertia>3.7986226367801501e-07 3.7986736622759161e-07 2.8704565617625662e-08 9.5911438682894113e-11 -2.7136999052085963e-10 4.6261535197394153e-12</Inertia>
+</MassProperties>
+<GeometryFile name="Robot - J7 thread.step_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.792156862745098" g="0.81960784313725488" b="0.93333333333333335" a="1"/>
+<Diffuse r="0.792156862745098" g="0.81960784313725488" b="0.93333333333333335" a="1"/>
+<Specular r="0.396078431372549" g="0.40980392156862744" b="0.46666666666666667" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+<Part name="Robot - J8 cap.step" uid="Robot - J8 cap.step*:*Default" version="116">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="Robot - J8 cap.step.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.002790059616936015</Mass>
+<CenterOfMass>2.6326319291968426e-05 -6.1684395092503216e-05 0.0060178148791323917</CenterOfMass>
+<Inertia>2.8484006873460974e-07 2.8464539259102588e-07 5.1789329958488588e-07 -2.8577015660755346e-10 6.3045966557970032e-11 1.0263597782785708e-10</Inertia>
+</MassProperties>
+<GeometryFile name="Robot - J8 cap.step_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.29803921568627451" g="0.29803921568627451" b="0.29803921568627451" a="1"/>
+<Diffuse r="0.29803921568627451" g="0.29803921568627451" b="0.29803921568627451" a="1"/>
+<Specular r="0.089411764705882343" g="0.089411764705882343" b="0.089411764705882343" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+<Part name="Robot - J9 hanger" uid="Robot - J9 hanger*:*Default" version="145">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="Robot - J9 hanger.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.00083915044407846149</Mass>
+<CenterOfMass>0.0045000000000000005 0 0</CenterOfMass>
+<Inertia>3.9098992909266029e-08 4.4713350157431718e-08 1.0755288664695111e-08 0 0 0</Inertia>
+</MassProperties>
+<GeometryFile name="Robot - J9 hanger_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="1" g="1" b="1" a="1"/>
+<Diffuse r="0.69999999999999996" g="0.69999999999999996" b="0.69999999999999996" a="1"/>
+<Specular r="0.050000000000000003" g="0.050000000000000003" b="0.050000000000000003" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+</Parts>
+</SimscapeMultibodyImportXML>

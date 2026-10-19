@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29503.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DIY_Robotics_EducativeCell", "DIY_Robotics_EducativeCell\DIY_Robotics_EducativeCell.csproj", "{E9793CE7-BA2E-4EDC-A857-49078BDFB80C}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{9C1116C6-362A-48A8-A66D-059A11AB7B91}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E9793CE7-BA2E-4EDC-A857-49078BDFB80C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9793CE7-BA2E-4EDC-A857-49078BDFB80C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9793CE7-BA2E-4EDC-A857-49078BDFB80C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9793CE7-BA2E-4EDC-A857-49078BDFB80C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C1116C6-362A-48A8-A66D-059A11AB7B91}.Debug|Any CPU.ActiveCfg = Debug
+		{9C1116C6-362A-48A8-A66D-059A11AB7B91}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {313375DA-4B21-4C11-9B6C-197A7F0A262D}
+	EndGlobalSection
+EndGlobal

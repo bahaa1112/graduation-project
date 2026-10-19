@@ -1,0 +1,376 @@
+\section{صياغة النموذج الديناميكي لأغراض التحكم}
+
+قبل البدء بتصميم نظام التحكم، يجب إعادة صياغة النموذج الديناميكي للذراع الروبوتية بالشكل الذي يسمح باستخدامه في المحاكاة وفي بناء المتحكم. فالهدف من هذه المرحلة هو الانتقال من معادلة الحركة التي تربط عزوم المفاصل بتسارعاتها إلى نموذج رياضي يربط دخل المشغلات بحالة الذراع، أي بمواضع المفاصل وسرعاتها.
+
+يعتمد هذا القسم على النموذج الديناميكي المستنتج في الفصل السابق، ثم يتم ترتيبه بما يناسب أغراض التحكم. وتشمل هذه العملية عزل تسارع المفاصل من معادلة الحركة، وإضافة نموذج المشغلات، ودمج هذا النموذج مع معادلة الذراع، ثم كتابة النموذج الناتج بصيغة فضاء حالة غير خطية.
+
+\subsection{النموذج الديناميكي المعتمد}
+
+تم في الفصل السابق اشتقاق النموذج الديناميكي المبسط للذراع الروبوتية، وذلك بعد إهمال حدود كوريوليس والقوى النابذة. وبناءً على ذلك يمكن كتابة معادلة الحركة بالشكل:
+
+\begin{equation}
+\tau = M(q)\ddot{q} + G(q)
+\label{eq:control_basic_dynamic_model}
+\end{equation}
+
+حيث إن \(q\) يمثل متجه مواضع المفاصل، و \(\dot{q}\) يمثل متجه سرعات المفاصل، و \(\ddot{q}\) يمثل متجه تسارعات المفاصل. أما \(M(q)\) فتمثل مصفوفة العطالة الكلية للنظام، و \(G(q)\) يمثل متجه عزوم الجاذبية، في حين يمثل \(\tau\) متجه العزوم المطبقة على المفاصل.
+
+وبما أن النموذج المعتمد يتضمن تأثير عزم القصور الذاتي للمشغلات، فإن مصفوفة العطالة الكلية تكتب بالشكل:
+
+\begin{equation}
+M(q)=D(q)+I_{act}
+\label{eq:control_total_inertia}
+\end{equation}
+
+حيث تمثل \(D(q)\) مصفوفة عطالة الوصلات، بينما يمثل \(I_{act}\) مصفوفة عزم القصور الذاتي للمشغلات المضافة إلى المفاصل.
+
+\subsection{عزل تسارع المفاصل}
+
+من أجل استخدام النموذج الديناميكي في المحاكاة والتحكم، يجب الحصول على تسارع المفاصل بدلالة العزم المطبق وحالة النظام. لذلك تتم إعادة ترتيب المعادلة \eqref{eq:control_basic_dynamic_model} كما يلي:
+
+\begin{equation}
+M(q)\ddot{q} = \tau - G(q)
+\end{equation}
+
+وبالتالي يمكن عزل تسارع المفاصل بالشكل:
+
+\begin{equation}
+\ddot{q} = M(q)^{-1}\left(\tau - G(q)\right)
+\label{eq:control_ddq_isolated_basic}
+\end{equation}
+
+تمثل المعادلة \eqref{eq:control_ddq_isolated_basic} الصيغة المباشرة للنموذج الديناميكي بعد عزل تسارع المفاصل، إذ تسمح بحساب \(\ddot{q}\) عند معرفة العزوم المطبقة على المفاصل. وبما أن المتغيرات \(q\)، و\(\dot{q}\)، و\(\ddot{q}\) تعتمد على الزمن فقط، فإن هذا النموذج يمثل نظاماً من المعادلات التفاضلية العادية \LR{Ordinary Differential Equations}. كما أنه يعد نظاماً تفاضلياً من الرتبة الثانية \LR{Second-Order} لأن أعلى مشتق ظاهر فيه هو تسارع المفاصل \(\ddot{q}\). إضافة إلى ذلك، فإن اعتماد مصفوفة العطالة \(M(q)\) وحد الجاذبية \(G(q)\) على وضعية المفاصل يجعل النظام غير خطي \LR{Nonlinear} ومترابطاً \LR{Coupled} بين المفاصل.
+
+وعليه يمكن وصف النموذج الديناميكي قبل تحويله إلى فضاء الحالة بأنه نظام من المعادلات التفاضلية العادية غير الخطية المترابطة من الرتبة الثانية \LR{Second-Order Nonlinear Coupled Ordinary Differential Equations}. ولكن في التطبيق العملي لا يتم إدخال العزم مباشرة إلى النظام، وإنما يتم التحكم بالمشغلات عن طريق إشارات دخل كهربائية أو أوامر مكافئة. لذلك يجب ربط النموذج الديناميكي مع نموذج المشغلات من أجل الحصول على صيغة مناسبة لتصميم المتحكمات.
+
+\subsection{نمذجة المشغلات}
+
+تم تمثيل المشغلات في هذا العمل بنموذج خطي تقريبي يربط بين عزم المشغل ودخل التحكم وسرعة المفصل وتسارعه. يكتب نموذج المشغلات بالشكل العام:
+
+\begin{equation}
+\tau_{act}=K_u u-K_v\dot{q}-K_a\ddot{q}
+\label{eq:control_actuator_model}
+\end{equation}
+
+حيث يمثل \(u\) متجه دخل المشغلات، وتمثل \(K_u\) مصفوفة كسب الدخل، بينما تمثل \(K_v\) مصفوفة تأثير السرعة، وتمثل \(K_a\) مصفوفة تأثير التسارع في نموذج المشغل. أما \(\tau_{act}\) فيمثل متجه العزوم الناتجة عن المشغلات والمطبقة على مفاصل الذراع.
+
+وبما أن كل مفصل يملك مشغلاً خاصًا به، فإن هذه المعاملات تمثل بمصفوفات قطرية. بالنسبة للمفاصل الأربعة الأولى، تم استخدام مشغلات من النوع \LR{MG995}، أما المفصل الخامس فتم تمثيله بمشغل من النوع \LR{MG92B}. لذلك تكتب مصفوفات معاملات المشغلات كما يلي:
+
+\begin{equation}
+K_u =
+\mathrm{diag}
+\left(
+0.15,\;0.15,\;0.15,\;0.15,\;0.0572
+\right)
+\label{eq:control_ku_matrix}
+\end{equation}
+
+\begin{equation}
+K_v =
+\mathrm{diag}
+\left(
+0.1375,\;0.1375,\;0.1375,\;0.1375,\;0.0262
+\right)
+\label{eq:control_kv_matrix}
+\end{equation}
+
+\begin{equation}
+K_a =
+\mathrm{diag}
+\left(
+0.12,\;0.12,\;0.12,\;0.12,\;0.015
+\right)
+\label{eq:control_ka_matrix}
+\end{equation}
+
+\subsection{دمج نموذج المشغلات مع معادلة الحركة}
+
+بما أن العزم المطبق على مفاصل الذراع ناتج عن المشغلات، يمكن كتابة:
+
+\begin{equation}
+\tau=\tau_{act}
+\label{eq:control_tau_equals_tau_act}
+\end{equation}
+
+وبتعويض نموذج المشغلات من المعادلة \eqref{eq:control_actuator_model} في النموذج الديناميكي الأساسي نحصل على:
+
+\begin{equation}
+M(q)\ddot{q}+G(q)=K_u u-K_v\dot{q}-K_a\ddot{q}
+\end{equation}
+
+بعد ذلك يتم جمع حدود التسارع في طرف واحد:
+
+\begin{equation}
+M(q)\ddot{q}+K_a\ddot{q}
+=
+K_u u-K_v\dot{q}-G(q)
+\end{equation}
+
+أي:
+
+\begin{equation}
+\left(M(q)+K_a\right)\ddot{q}
+=
+K_u u-K_v\dot{q}-G(q)
+\label{eq:control_merged_dynamic_model}
+\end{equation}
+
+ومنها نحصل على تسارع المفاصل بالشكل:
+
+\begin{equation}
+\ddot{q}
+=
+\left(M(q)+K_a\right)^{-1}
+\left(
+K_u u-K_v\dot{q}-G(q)
+\right)
+\label{eq:control_ddq_actuated}
+\end{equation}
+
+تمثل المعادلة \eqref{eq:control_ddq_actuated} النموذج الديناميكي بعد دمج نموذج المشغلات مع معادلة حركة الذراع. ويلاحظ أن مصفوفة \(K_a\) تظهر مضافة إلى مصفوفة العطالة \(M(q)\)، وذلك لأن نموذج المشغل يحتوي على حد يعتمد على تسارع المفصل. وبذلك يصبح تأثير التسارع في المشغل جزءًا من الطرف المرتبط بعطالة النظام.
+
+تعد هذه الصيغة مناسبة لأغراض التحكم، لأنها تربط تسارع المفاصل مباشرة بدخل المشغلات \(u\)، وبحالة النظام الممثلة بمواضع المفاصل \(q\) وسرعاتها \(\dot{q}\).
+
+\subsection{التمثيل غير الخطي في فضاء الحالة}
+
+بعد الحصول على العلاقة بين دخل المشغلات وتسارع المفاصل، يمكن تحويل النموذج إلى صيغة فضاء حالة. يتم اختيار متجه الحالة بحيث يحتوي على مواضع المفاصل وسرعاتها:
+
+\begin{equation}
+x=
+\begin{bmatrix}
+q\\
+\dot{q}
+\end{bmatrix}
+\label{eq:control_state_vector}
+\end{equation}
+
+أي أن:
+
+\begin{equation}
+x=
+\begin{bmatrix}
+\theta_1 &
+\theta_2 &
+\theta_3 &
+\theta_4 &
+\theta_5 &
+\dot{\theta}_1 &
+\dot{\theta}_2 &
+\dot{\theta}_3 &
+\dot{\theta}_4 &
+\dot{\theta}_5
+\end{bmatrix}^{T}
+\label{eq:control_state_vector_explicit}
+\end{equation}
+
+وبالتالي يكون مشتق متجه الحالة:
+
+\begin{equation}
+\dot{x}
+=
+\begin{bmatrix}
+\dot{q}\\
+\ddot{q}
+\end{bmatrix}
+\label{eq:control_state_derivative}
+\end{equation}
+
+وباستخدام النموذج الناتج في المعادلة \eqref{eq:control_ddq_actuated}، يمكن كتابة فضاء الحالة غير الخطي بالشكل:
+
+\begin{equation}
+\dot{x}
+=
+\begin{bmatrix}
+\dot{q}\\
+\left(M(q)+K_a\right)^{-1}
+\left(
+K_u u-K_v\dot{q}-G(q)
+\right)
+\end{bmatrix}
+\label{eq:control_nonlinear_state_space}
+\end{equation}
+
+وبما أن \(M(q)\) و \(G(q)\) يعتمدان على مواضع المفاصل، فإن النموذج الناتج يعد نموذجًا غير خطي، ويمكن كتابته بصورة عامة كما يلي:
+
+\begin{equation}
+\dot{x}=f(x,u)
+\label{eq:control_general_nonlinear_model}
+\end{equation}
+وبذلك تم تحويل النموذج الديناميكي من نظام معادلات تفاضلية عادية غير خطية مترابطة من الرتبة الثانية إلى نظام تفاضلي عادي غير خطي من الرتبة الأولى بصيغة فضاء الحالة \LR{First-Order Nonlinear State-Space Ordinary Differential Equation}. ويعود ذلك إلى أن متجه الحالة \(x\) يتضمن كلاً من مواضع المفاصل وسرعاتها، أي:
+
+\begin{equation}
+x=
+\begin{bmatrix}
+q\\
+\dot{q}
+\end{bmatrix}
+\end{equation}
+
+وبالتالي فإن مشتق الحالة \(\dot{x}\) يحتوي على السرعات والتسارعات، مما يسمح بتمثيل النظام كاملاً باستخدام مشتق من الرتبة الأولى فقط. كما أن اعتماد النموذج على \(q\) و\(\dot{q}\)، إضافة إلى وجود المصفوفات \(M(q)\) و\(G(q)\)، يجعل النظام غير خطي ومتغيراً مع الحالة.
+\subsection{تمثيل النموذج بمصفوفات الحالة}
+
+يمكن أيضًا إعادة كتابة النموذج السابق بصيغة قريبة من تمثيل فضاء الحالة باستخدام المصفوفات \(A\)، \(B\)، و \(C\). ولتسهيل الكتابة نعرف المصفوفة:
+
+\begin{equation}
+H(q)=\left(M(q)+K_a\right)^{-1}
+\label{eq:control_H_matrix}
+\end{equation}
+
+وبذلك تصبح معادلة التسارع:
+
+\begin{equation}
+\ddot{q}
+=
+H(q)K_u u
+-
+H(q)K_v\dot{q}
+-
+H(q)G(q)
+\label{eq:control_ddq_H_form}
+\end{equation}
+
+وبما أن متجه الحالة هو:
+
+\begin{equation}
+x=
+\begin{bmatrix}
+q\\
+\dot{q}
+\end{bmatrix}
+\end{equation}
+
+فإن النموذج يمكن كتابته بالشكل:
+
+\begin{equation}
+\dot{x}=A(q)x+B(q)u+r(q)
+\label{eq:control_state_space_AB_r}
+\end{equation}
+
+حيث إن:
+
+\begin{equation}
+A(q)=
+\begin{bmatrix}
+0_{5\times5} & I_{5\times5}\\
+0_{5\times5} & -H(q)K_v
+\end{bmatrix}
+\label{eq:control_A_matrix}
+\end{equation}
+
+و:
+
+\begin{equation}
+B(q)=
+\begin{bmatrix}
+0_{5\times5}\\
+H(q)K_u
+\end{bmatrix}
+\label{eq:control_B_matrix}
+\end{equation}
+
+أما الحد الناتج عن الجاذبية فيكتب بالشكل:
+
+\begin{equation}
+r(q)=
+\begin{bmatrix}
+0_{5\times1}\\
+-H(q)G(q)
+\end{bmatrix}
+\label{eq:control_r_vector}
+\end{equation}
+
+إذن يمكن كتابة النموذج كاملًا كما يلي:
+
+\begin{equation}
+\dot{x}
+=
+\begin{bmatrix}
+0_{5\times5} & I_{5\times5}\\
+0_{5\times5} & -H(q)K_v
+\end{bmatrix}
+x
++
+\begin{bmatrix}
+0_{5\times5}\\
+H(q)K_u
+\end{bmatrix}
+u
++
+\begin{bmatrix}
+0_{5\times1}\\
+-H(q)G(q)
+\end{bmatrix}
+\label{eq:control_full_state_space_matrix_form}
+\end{equation}
+
+هذا التمثيل لا يعني أن النظام أصبح خطيًا، لأن المصفوفتين \(A(q)\) و \(B(q)\) تعتمدان على مواضع المفاصل من خلال \(H(q)\)، كما أن الحد \(r(q)\) يمثل تأثير الجاذبية. لذلك يبقى النموذج نموذجًا غير خطي، ولكنه مكتوب بصيغة مصفوفية مناسبة للتحليل والمحاكاة.
+
+\subsection{خرج النظام}
+
+تم اختيار خرج النظام في هذا العمل ليكون مواضع المفاصل فقط، أي أن الخرج لا يتضمن سرعات المفاصل، وإنما يتضمن الزوايا الخمس للمفاصل:
+
+\begin{equation}
+y=q
+\label{eq:control_output_q}
+\end{equation}
+
+وبما أن:
+
+\begin{equation}
+q=
+\begin{bmatrix}
+\theta_1\\
+\theta_2\\
+\theta_3\\
+\theta_4\\
+\theta_5
+\end{bmatrix}
+\end{equation}
+
+فإن متجه الخرج يكتب صراحة كما يلي:
+
+\begin{equation}
+y=
+\begin{bmatrix}
+\theta_1\\
+\theta_2\\
+\theta_3\\
+\theta_4\\
+\theta_5
+\end{bmatrix}
+\label{eq:control_output_vector}
+\end{equation}
+
+ويمكن تمثيل ذلك بصيغة مصفوفية على الشكل:
+
+\begin{equation}
+y=Cx+Du
+\label{eq:control_output_state_relation}
+\end{equation}
+
+حيث إن:
+
+\begin{equation}
+C=
+\begin{bmatrix}
+1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0
+\end{bmatrix}
+=
+\begin{bmatrix}
+I_{5\times5} & 0_{5\times5}
+\end{bmatrix}
+\label{eq:control_C_matrix}
+\end{equation}
+
+أما مصفوفة الانتقال المباشر من الدخل إلى الخرج فهي معدومة، لأن خرج النظام المختار هو مواضع المفاصل، ولا يوجد تأثير مباشر للدخل \(u\) على الخرج دون المرور بديناميك النظام:
+
+\begin{equation}
+D=0_{5\times5}
+\label{eq:control_D_matrix}
+\end{equation}
+
+تمثل هذه الصيغة النموذج النهائي المستخدم لأغراض التحكم، حيث يربط النموذج بين دخل المشغلات \(u\) وحالة الذراع \(x\)، مما يسمح لاحقًا بتصميم متحكم قادر على جعل المفاصل تتبع القيم المرجعية المطلوبة.

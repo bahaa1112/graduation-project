@@ -1,0 +1,27 @@
+﻿<Window x:Class="DIY_Robotics_EducativeCell.CloseWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DIY_Robotics_EducativeCell"
+        mc:Ignorable="d"
+         Title="Close DIY Robotics - Robotic Educative Cell" Height="200" Width="600" WindowStartupLocation="CenterScreen">
+    
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50*"></RowDefinition>
+                <RowDefinition Height="50*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Do you really want to close?</TextBlock>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Name="YesBtn" Width="100" Height="30" Margin="5" Content="Yes" Click="YesBtn_Click"></Button>
+            <Button Name="NoBtn" Grid.Column="1" Width="100" Height="30" Margin="5" Content="No" Click="NoBtn_Click"></Button>
+        </Grid>
+    </Grid>
+    
+</Window>

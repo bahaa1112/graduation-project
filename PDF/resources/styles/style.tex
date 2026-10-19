@@ -1,0 +1,70 @@
+%==================== STYLES ====================
+
+% تنسيق العناوين
+\usepackage{titlesec}
+
+% تنسيق Chapter
+\titleformat{\chapter}
+{\Huge\bfseries}
+{\thechapter}
+{1em}
+{}
+
+% تنسيق Section
+\titleformat{\section}
+{\Large\bfseries}
+{\thesection}
+{1em}
+{}
+
+% تنسيق Subsection
+\titleformat{\subsection}
+{\large\bfseries}
+{\thesubsection}
+{1em}
+{}
+
+% المسافات بين العناوين
+\titlespacing*{\chapter}{0pt}{-20pt}{20pt}
+\titlespacing*{\section}{0pt}{10pt}{10pt}
+\titlespacing*{\subsection}{0pt}{8pt}{8pt}
+
+% تنسيق الفهرس
+\usepackage{tocloft}
+
+\renewcommand{\cftchapfont}{\bfseries}
+\renewcommand{\cftsecfont}{}
+\renewcommand{\cftchappagefont}{\bfseries}
+
+% مسافات الفهرس
+\setlength{\cftbeforechapskip}{5pt}
+
+% دعم اتجاه عربي أفضل
+%\raggedleft
+
+% تنسيق الصور
+\usepackage{caption}
+\captionsetup{
+    justification=raggedleft,
+    singlelinecheck=false
+}
+
+% تنسيق الجداول
+\renewcommand{\arraystretch}{1.5}
+
+% أوامر مساعدة
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+% تحسين عرض الكود
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{gray!10},
+    commentstyle=\color{green},
+    keywordstyle=\color{blue},
+    numberstyle=\tiny\color{gray},
+    stringstyle=\color{red},
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    frame=single
+}
+
+\lstset{style=mystyle}

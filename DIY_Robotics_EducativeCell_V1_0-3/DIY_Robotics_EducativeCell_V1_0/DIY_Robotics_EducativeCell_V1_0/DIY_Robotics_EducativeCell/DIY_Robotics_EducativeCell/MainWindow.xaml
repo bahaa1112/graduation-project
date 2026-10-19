@@ -1,0 +1,213 @@
+﻿<Window x:Class="DIY_Robotics_EducativeCell.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DIY_Robotics_EducativeCell"
+        mc:Ignorable="d"
+        Title="DIY Robotics" Icon="icon48.ico" Height="990" Width="1920" Background="#EAEAEA" Closing="Window_Closing" WindowStartupLocation="CenterScreen">
+    <Grid x:Name="mainPageGrid">
+
+        <StackPanel Orientation="Horizontal" Height="750" Width="1500" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,30,0,0">
+
+            <StackPanel Orientation="Vertical" Height="750" Width="300" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="50,0,0,0">
+
+                <DockPanel Height="100" Width="300" Margin="0,00,0,0">
+                    <Border CornerRadius="6" BorderBrush="#003E69" Background="#003E69" BorderThickness="1" DockPanel.Dock="Top">
+                        <StackPanel Orientation="Vertical" Height="100" Width="300">
+
+                            <StackPanel Orientation="Horizontal" Height="100" Width="300">
+
+                                <StackPanel Orientation="Vertical" Height="100" Width="170">
+                                    <StackPanel.Background>
+                                    <ImageBrush ImageSource="Logo8.bmp" Stretch="None"/>
+                                    </StackPanel.Background>
+                                </StackPanel>
+                                
+                                <StackPanel Orientation="Vertical" Height="100" Width="120">
+                                    <TextBlock Text="Robotic" Width="120" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="20" Foreground="#FFDB00" TextAlignment="Right" Margin="0,5,0,0"/>
+                                    <TextBlock Text="Educative" Width="120" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="20" Foreground="#FFDB00" TextAlignment="Right" Margin="0,-7,0,0"/>
+                                    <TextBlock Text="Cell" Width="120" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="20" Foreground="#FFDB00" TextAlignment="Right" Margin="0,-7,0,0"/>
+                                    <TextBlock Text="Software V1.0" Width="120" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="18" Foreground="White" TextAlignment="Right" Margin="0,-2,0,0"/>
+                                </StackPanel>
+
+
+                            </StackPanel>
+
+                        </StackPanel>
+                    </Border>
+                </DockPanel>
+
+                <DockPanel Height="310" Width="300" Margin="0,10,0,0">
+                    <Border CornerRadius="6" BorderBrush="#003E69" Background="#F0F0F0" BorderThickness="6" DockPanel.Dock="Top">
+                        <StackPanel Orientation="Vertical">
+
+
+                            <TextBlock Text="  Position" Width="302" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="25" Foreground="White" Background="#003E69" Margin="-1,-1,-1,0"/>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="J1" Width="40" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="25" Margin="10,10,0,0"/>
+                                <TextBlock x:Name="J1PosBox" Text="{Binding J1PosBind}" Width="95" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="22" Margin="0,10,0,0"/>
+                                <TextBlock Text="deg" Width="40" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="22" Margin="0,10,0,0"/>
+                            </StackPanel>
+                            
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="J2" Width="40" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="25" Margin="10,10,0,0"/>
+                                <TextBlock x:Name="J2PosBox" Text="{Binding J2PosBind}"  Width="95" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="22" Margin="0,10,0,0"/>
+                                <TextBlock Text="deg" Width="40" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="22" Margin="0,10,0,0"/>
+  
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="J3" Width="40" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="25" Margin="10,10,0,0"/>
+                                <TextBlock x:Name="J3PosBox" Text="{Binding J3PosBind}"  Width="95" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="22" Margin="0,10,0,0"/>
+                                <TextBlock Text="deg" Width="40" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="22" Margin="0,10,0,0"/>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="J4" Width="40" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="25" Margin="10,10,0,0"/>
+                                <TextBlock x:Name="J4PosBox" Text="{Binding J4PosBind}"  Width="95" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="22" Margin="0,10,0,0"/>
+                                <TextBlock Text="deg" Width="40" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="22" Margin="0,10,0,0"/>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="J5" Width="40" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="25" Margin="10,10,0,0"/>
+                                <TextBlock x:Name="J5PosBox" Text="{Binding J5PosBind}"  Width="95" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="22" Margin="0,10,0,0"/>
+                                <TextBlock Text="deg" Width="40" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="22" Margin="0,10,0,0"/>
+                            </StackPanel>
+                            
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="J6" Width="40" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="25" Margin="10,10,0,0"/>
+                                <TextBlock x:Name="J6PosBox" Text="{Binding J6PosBind}"  Width="95" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="22" Margin="0,10,0,0"/>
+                                <TextBlock Text="deg" Width="40" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="22" Margin="0,10,0,0"/>
+                            </StackPanel>
+                            
+                        </StackPanel>
+                    </Border>
+                </DockPanel>
+
+                <DockPanel Height="260" Width="300" Margin="0,10,0,0">
+                    <Border CornerRadius="6" BorderBrush="#003E69" Background="#F0F0F0" BorderThickness="6" DockPanel.Dock="Top">
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text="   I/O" Width="302" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="25" Foreground="White" Background="#003E69" Margin="-1,-1,-1,0"/>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Di1" Width="40" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="20" Margin="20,20,0,0"/>
+                                <TextBlock x:Name="Di1Box" Text="OFF" Width="50" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="20" TextAlignment="Center" Background="LightSalmon" Foreground="White"  Margin="0,20,0,0"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Di2" Width="40" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="20" Margin="20,0,0,0"/>
+                                <TextBlock x:Name="Di2Box" Text="OFF"  Width="50" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="20" TextAlignment="Center" Background="LightSalmon" Foreground="White"  Margin="0,0,0,0"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Di3" Width="40" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="20" Margin="20,0,0,0"/>
+                                <TextBlock x:Name="Di3Box" Text="OFF"  Width="50" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="20" TextAlignment="Center" Background="LightSalmon" Foreground="White"  Margin="0,0,0,0"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                               <TextBlock Text="Do1" Width="40" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="20" Margin="20,20,0,0"/>
+                                <TextBlock x:Name="Do1Box" Text="OFF" Width="50" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="20" TextAlignment="Center" Background="LightSalmon" Foreground="White"  Margin="0,20,0,0"/>
+                                <Button x:Name="BtnToggleDo1" Content="Toggle" Width="50" Margin="10,20,0,0" FontSize="15" Background="#003E69" Foreground="White" Click="ToggleDo1ButtonClick"/>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal">
+                             <TextBlock Text="Do2" Width="40" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="20" Margin="20,0,0,0"/>
+                                <TextBlock x:Name="Do2Box" Text="OFF" Width="50" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="20" TextAlignment="Center" Background="LightSalmon" Foreground="White"  Margin="0,0,0,0"/>
+                                <Button x:Name="BtnToggleDo2" Content="Toggle" Width="50" Margin="10,0,0,0" FontSize="15" Background="#003E69" Foreground="White" Click="ToggleDo2ButtonClick"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                               <TextBlock Text="Do3" Width="40" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="20" Margin="20,0,0,0"/>
+                                <TextBlock x:Name="Do3Box" Text="OFF" Width="50" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="20" TextAlignment="Center" Background="LightSalmon" Foreground="White" Margin="0,0,0,0"/>
+                                <Button x:Name="BtnToggleDo3" Content="Toggle" Width="50" Margin="10,0,0,0" FontSize="15" Background="#003E69" Foreground="White" Click="ToggleDo3ButtonClick"/>
+                            </StackPanel>
+
+                        </StackPanel>
+                    </Border>
+                </DockPanel>
+
+                <DockPanel Height="45" Width="300"  Margin="0,10,0,0">
+                    <Border CornerRadius="6" BorderBrush="#003E69" Background="#003E69" BorderThickness="6" DockPanel.Dock="Top">
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock x:Name="ModeBox" Text="Robot not connected" TextAlignment="Center" Width="302" Height="60" VerticalAlignment="Top" HorizontalAlignment="Center" FontWeight="Bold"  FontSize="25" Foreground="#FFDB00" Background="#003E69" Margin="-1,-1,-1,0"/>
+                        </StackPanel>
+                    </Border>
+                </DockPanel>
+
+            </StackPanel>
+
+
+
+
+            <StackPanel Orientation="Vertical" Height="750" Width="800" Margin="20,0,0,0" VerticalAlignment="Top">
+
+
+            <Frame x:Name="Main" Height="620" Width="800" Margin="0,5,0,0" NavigationUIVisibility="Hidden"/>
+
+                <DockPanel Height="110" Width="800" Margin="0,10,0,0">
+                    <Border CornerRadius="6" BorderBrush="#003E69" Background="#F0F0F0" BorderThickness="6" DockPanel.Dock="Top">
+                        <StackPanel Orientation="Horizontal" Height="100" Width="800" Margin="0,0,0,0">
+                            <Button x:Name="BtnMenuProg" Content="PROG" Width="70" Height="70" Margin="20,0,0,0" FontSize="12" FontWeight="Bold" Click="Btn_Prog_Click"  IsEnabled="False"/>
+                            <Button x:Name="BtnMenuConnect" Width="70" Height="70" Margin="20,0,0,0" FontSize="12" FontWeight="Bold" Click="Btn_Connect_Click"  IsEnabled="False">
+                                <TextBlock Text="CONNECT ROBOT" TextAlignment="Center" TextWrapping="Wrap"/>
+                            </Button>
+                            <Button x:Name="BtnMenuEXE" Width="70" Height="70" Margin="100,0,0,0" FontSize="12" FontWeight="Bold" Click="Btn_ExeLine_Click"  IsEnabled="False">
+                                <TextBlock Text="EXECUTE LINE" TextAlignment="Center" TextWrapping="Wrap"/>
+                            </Button>
+                            <Button x:Name="BtnMenuAUTO" Content="AUTO" Width="70" Height="70" Margin="20,0,0,0" FontSize="12" FontWeight="Bold" Click="Btn_Auto_Click"  IsEnabled="False"/>
+                        </StackPanel>
+                    </Border>
+                </DockPanel>
+
+            </StackPanel>
+
+
+            <StackPanel Orientation="Vertical" Height="750" Width="230" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="20,0,0,0">
+                <DockPanel Height="745" Width="230" Margin="0,0,0,0">
+                <Border CornerRadius="6" BorderBrush="#003E69" Background="#F0F0F0" BorderThickness="6" DockPanel.Dock="Top" PreviewMouseRightButtonDown="J6PosButtonMouseDown" PreviewMouseRightButtonUp="J6PosButtonMouseUp">
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text="  Control" Width="232" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="25" Foreground="White" Background="#003E69" Margin="-1,-1,-1,0"/>
+              
+                            <StackPanel Orientation="Vertical" Height="680" Width="180" HorizontalAlignment="Left" Margin="20,10,0,0">
+                                
+                                 <StackPanel Orientation="Horizontal" Height="60" Width="180">
+                                    <Button x:Name="BtnJ1Pos" Content="J1+" Width="60" Height="60" Margin="20,0,0,0" FontSize="14" FontWeight="Bold" PreviewMouseLeftButtonDown="J1PosButtonMouseDown" PreviewMouseLeftButtonUp="J1PosButtonMouseUp" IsEnabled="False"/>
+                                    <Button x:Name="BtnJ1Neg" Content="J1-" Width="60" Height="60" Margin="20,0,0,0" FontSize="14" FontWeight="Bold" PreviewMouseLeftButtonDown="J1NegButtonMouseDown" PreviewMouseLeftButtonUp="J1NegButtonMouseUp" IsEnabled="False"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Height="80" Width="180">
+                                    <Button x:Name="BtnJ2Pos" Content="J2+" Width="60" Height="60" Margin="20,10,0,0" FontSize="14" FontWeight="Bold" PreviewMouseLeftButtonDown="J2PosButtonMouseDown" PreviewMouseLeftButtonUp="J2PosButtonMouseUp" IsEnabled="False"/>
+                                    <Button x:Name="BtnJ2Neg" Content="J2-" Width="60" Height="60" Margin="20,10,0,0" FontSize="14" FontWeight="Bold" PreviewMouseLeftButtonDown="J2NegButtonMouseDown" PreviewMouseLeftButtonUp="J2NegButtonMouseUp" IsEnabled="False"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Height="80" Width="180">
+                                    <Button x:Name="BtnJ3Pos" Content="J3+" Width="60" Height="60" Margin="20,10,0,0" FontSize="14" FontWeight="Bold" PreviewMouseLeftButtonDown="J3PosButtonMouseDown" PreviewMouseLeftButtonUp="J3PosButtonMouseUp" IsEnabled="False"/>
+                                    <Button x:Name="BtnJ3Neg" Content="J3-" Width="60" Height="60" Margin="20,10,0,0" FontSize="14" FontWeight="Bold" PreviewMouseLeftButtonDown="J3NegButtonMouseDown" PreviewMouseLeftButtonUp="J3NegButtonMouseUp" IsEnabled="False"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Height="80" Width="180">
+                                    <Button x:Name="BtnJ4Pos" Content="J4+" Width="60" Height="60" Margin="20,10,0,0" FontSize="14" FontWeight="Bold" PreviewMouseLeftButtonDown="J4PosButtonMouseDown" PreviewMouseLeftButtonUp="J4PosButtonMouseUp" IsEnabled="False"/>
+                                    <Button x:Name="BtnJ4Neg" Content="J4-" Width="60" Height="60" Margin="20,10,0,0" FontSize="14" FontWeight="Bold" PreviewMouseLeftButtonDown="J4NegButtonMouseDown" PreviewMouseLeftButtonUp="J4NegButtonMouseUp" IsEnabled="False"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Height="80" Width="180">
+                                    <Button x:Name="BtnJ5Pos" Content="J5+" Width="60" Height="60" Margin="20,10,0,0" FontSize="14" FontWeight="Bold" PreviewMouseLeftButtonDown="J5PosButtonMouseDown" PreviewMouseLeftButtonUp="J5PosButtonMouseUp" IsEnabled="False"/>
+                                    <Button x:Name="BtnJ5Neg" Content="J5-" Width="60" Height="60" Margin="20,10,0,0" FontSize="14" FontWeight="Bold" PreviewMouseLeftButtonDown="J5NegButtonMouseDown" PreviewMouseLeftButtonUp="J5NegButtonMouseUp" IsEnabled="False"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Height="80" Width="180">
+                                    <Button x:Name="BtnJ6Pos" Content="J6+" Width="60" Height="60" Margin="20,10,0,0" FontSize="14" FontWeight="Bold" PreviewMouseLeftButtonDown="J6PosButtonMouseDown" PreviewMouseLeftButtonUp="J6PosButtonMouseUp" IsEnabled="False"/>
+                                    <Button x:Name="BtnJ6Neg" Content="J6-" Width="60" Height="60" Margin="20,10,0,0" FontSize="14" FontWeight="Bold" PreviewMouseLeftButtonDown="J6NegButtonMouseDown" PreviewMouseLeftButtonUp="J6NegButtonMouseUp" IsEnabled="False"/>
+                                </StackPanel>
+
+                                <TextBlock Text="Speed:" Width="80" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="20" TextAlignment="Center" Margin="0,10,0,0"/>
+                                <StackPanel Orientation="Horizontal" Height="30" Width="180">
+                                    <TextBlock x:Name="SpeedBox" Text="{Binding SpeedBind}"  Width="80" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="22" Margin="50,0,0,0"/>
+                                <TextBlock Text="%" Width="40" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="22" Margin="0,0,0,0"/>
+                                </StackPanel>
+                                    
+                                <StackPanel Orientation="Horizontal" Height="80" Width="180">
+                                    <Button x:Name="BtnSpeedPos" Content="+" Width="60" Height="60" Margin="20,0,0,0" FontSize="14" FontWeight="Bold" Click="SpeedPosButtonClick" IsEnabled="False"/>
+                                    <Button x:Name="BtnSpeedNeg" Content="-" Width="60" Height="60" Margin="20,0,0,0" FontSize="14" FontWeight="Bold" Click="SpeedNegButtonClick" IsEnabled="False"/>
+                                </StackPanel>
+                                <Button x:Name="BtnEstop" Content="ESTOP" Width="140" Height="60" Margin="0,10,0,0" FontSize="25" FontWeight="Bold" Background="LightSalmon" Foreground="White" Click="EstopButtonClick"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+            </DockPanel>
+            </StackPanel>
+
+        </StackPanel>
+    </Grid>
+</Window>
+

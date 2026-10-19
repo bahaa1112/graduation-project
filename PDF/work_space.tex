@@ -1,0 +1,90 @@
+\documentclass[12pt,a4paper,fleqn]{report}
+
+\usepackage[top=2.5cm,bottom=2.5cm,left=3cm,right=3cm]{geometry}
+
+% دعم العربية (XeLaTeX)
+\usepackage{fontspec}
+
+\usepackage{polyglossia}
+
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{3d}
+
+
+\setmainlanguage[numerals=maghrib]{arabic}
+\setotherlanguage{english}
+
+\newfontfamily\arabicfont[Script=Arabic]{Arial}
+
+\newfontfamily\englishfont{Times New Roman}
+
+% تنسيق
+\usepackage{setspace}
+\onehalfspacing
+
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{imakeidx}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning}
+
+
+% تحميل ملفاتك
+\input{resources/settings/setting}
+\input{resources/styles/style}
+
+\makeindex[columns=2, title=الفهرس, options= -s resources/styles/indexstyle.ist, intoc]
+\indexsetup{level=\chapter*,toclevel=chapter}
+
+%==================== بداية المستند ====================
+\begin{document}
+
+%==================== صفحة التخرج ====================
+\include{titles/graduation}
+\gradeType{درجة البكالوريوس} % مثل: Bachelor of Science, Master of Science, إلخ  
+\title{ تصميم وتنفيذ ذراع روبوتية لنقل الأشياء باستخدام الأوامر الصوتية}
+\firstExaminer{د.حسان نداف}
+%\secondExaminer{الليث, محمد}
+\author{بهاء الياسين}
+\matrikelnr{215029}
+\submitDate{14.07.2026}
+
+%==================== صفحة الغلاف ====================
+\pagenumbering{alph}
+\maketitle
+
+%==================== الصفحات التمهيدية ====================
+\pagenumbering{Roman}
+\include{chapter/Preface} \clearpage  % كلمة تمهيدية   
+\include{chapter/Abstract} \clearpage % ملخص المشروع
+
+%==================== الفهرس ====================
+\tableofcontents
+\clearpage
+
+%==================== المحتوى ====================
+\pagenumbering{arabic}
+
+\include{chapter/Introduction} \clearpage % مقدمة
+\include{chapter/kinematics} \clearpage    
+\include{chapter/dynamic} \clearpage  
+\include{chapter/controll} \clearpage 
+\include{chapter/voice_command} \clearpage
+
+%==================== المراجع ====================
+\include{references/references}
+
+
+\end{document}
